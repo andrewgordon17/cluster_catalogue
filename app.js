@@ -768,7 +768,6 @@ const VALID_PASSWORDS = ['rainbowserpent'];
 // GitHub Personal Access Tokens for collaborative access
 // To add GitHub integration, replace these with real tokens
 const GITHUB_TOKENS = {
-    'rainbowserpent': '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',  // Your GitHub token (now in quotes)
 };
 
 function checkPassword() {
