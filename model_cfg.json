@@ -1,0 +1,27 @@
+{
+    "pythia-14m": {
+        "n_heads": 4,
+        "n_layers": 6,
+        "checkpoint": 50000
+    },
+    "pythia-31m": {
+        "n_heads": 8,
+        "n_layers": 6,
+        "checkpoint": 70000
+    },
+    "pythia-70m": {
+        "n_heads": 8,
+        "n_layers": 6,
+        "checkpoint": 70000
+    },
+    "pythia-160m": {
+        "n_heads": 12,
+        "n_layers": 12,
+        "checkpoint": 80000
+    },
+    "pythia-1.4b": {
+        "n_heads": 16,
+        "n_layers": 24,
+        "checkpoint": 143000
+    }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "cluster-catalogue",
+  "version": "1.0.0",
+  "description": "Web application for exploring and cataloguing cluster data",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 8000",
+    "start": "python -m http.server 8000"
+  },
+  "keywords": ["clusters", "visualization", "research"],
+  "author": "",
+  "license": "MIT"
+}
