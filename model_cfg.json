@@ -19,6 +19,11 @@
         "n_layers": 12,
         "checkpoint": 80000
     },
+    "pythia-410m": {
+        "n_heads": 16,
+        "n_layers": 24,
+        "checkpoint": 143000
+    },
     "pythia-1.4b": {
         "n_heads": 16,
         "n_layers": 24,

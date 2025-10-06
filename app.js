@@ -272,6 +272,7 @@ class ClusterCatalogue {
 
         if (!cluster["Context Pairs"] || cluster["Context Pairs"].length === 0) {
             container.innerHTML = '<div class="loading">No context pairs available</div>';
+            container.scrollTop = 0;
             return;
         }
 
@@ -286,6 +287,12 @@ class ClusterCatalogue {
             item.innerHTML = `${contextText}<span class="next-token">${nextToken}</span>`;
             container.appendChild(item);
         });
+
+        // Reset scroll to top - use multiple methods to ensure it works
+        container.scrollTop = 0;
+        setTimeout(() => {
+            container.scrollTop = 0;
+        }, 0);
     }
 
     updateFormFields(clusterId, cluster) {
