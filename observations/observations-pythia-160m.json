@@ -1,4 +1,10 @@
 {
+  "500": {
+    "name": "500",
+    "observations": "Name InductionsName flavored indict",
+    "lastModified": "2025-10-07T21:09:26.280Z",
+    "author": "github-user"
+  },
   "503": {
     "name": "503",
     "observations": "slashes in different waysSla",
