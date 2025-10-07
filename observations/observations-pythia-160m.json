@@ -1,4 +1,10 @@
 {
+  "99": {
+    "name": "99",
+    "observations": "factor/numberFactor and number",
+    "lastModified": "2025-10-07T21:27:48.801Z",
+    "author": "github-user"
+  },
   "117": {
     "name": "117",
     "observations": "derivative",
