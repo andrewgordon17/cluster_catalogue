@@ -1,4 +1,10 @@
 {
+  "511": {
+    "name": "511",
+    "observations": "math q instructions",
+    "lastModified": "2025-10-07T20:53:10.785Z",
+    "author": "github-user"
+  },
   "513": {
     "name": "513",
     "observations": "bio induction/bigram",
