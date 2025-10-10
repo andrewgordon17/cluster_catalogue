@@ -5,6 +5,7 @@ class ClusterCatalogue {
         this.clusterIds = [];
         this.currentIndex = 0;
         this.chart = null;
+        this.pcaChart = null;
         this.modelConfig = null;
         this.userPassword = null;
         this.currentDataset = 'pythia-14m'; // Default dataset
@@ -32,6 +33,7 @@ class ClusterCatalogue {
             await this.loadClustersData();
             await this.loadObservationsFromGitHub();
             this.setupChart();
+            this.setupPCAChart();
             this.populateClusterSelect();
             this.showCluster(this.clusterIds[0]);
         } catch (error) {
@@ -172,14 +174,19 @@ class ClusterCatalogue {
             // Load observations for the new dataset
             await this.loadObservationsFromGitHub();
 
-            // Destroy existing chart before creating new one
+            // Destroy existing charts before creating new ones
             if (this.chart) {
                 this.chart.destroy();
                 this.chart = null;
             }
+            if (this.pcaChart) {
+                this.pcaChart.destroy();
+                this.pcaChart = null;
+            }
 
             this.setupChart(); // Reinitialize chart for new model config
-            console.log('Chart setup complete, populating selects');
+            this.setupPCAChart(); // Reinitialize PCA chart
+            console.log('Charts setup complete, populating selects');
 
             this.populateClusterSelect();
             this.showCluster(this.clusterIds[0]); // Show first cluster of new dataset
@@ -218,8 +225,9 @@ class ClusterCatalogue {
         // Update form fields
         this.updateFormFields(clusterId, cluster);
 
-        // Update chart
+        // Update charts
         this.updateChart(cluster);
+        this.updatePCAChart(cluster);
     }
 
     updateStatistics(cluster) {
@@ -347,6 +355,30 @@ class ClusterCatalogue {
         this.chart.data.labels = labels;
         this.chart.data.datasets[0].data = data;
         this.chart.update();
+    }
+
+    updatePCAChart(cluster) {
+        if (!this.pcaChart) return;
+
+        const pcaData = cluster["Mean Susceptibilities PCA"];
+
+        // Check if PCA data exists
+        if (!pcaData || pcaData.length === 0) {
+            console.log('No PCA data found for this cluster');
+            this.pcaChart.data.labels = [];
+            this.pcaChart.data.datasets[0].data = [];
+            this.pcaChart.update();
+            return;
+        }
+
+        // Generate labels: PC1, PC2, PC3, ...
+        const labels = pcaData.map((_, i) => `PC${i + 1}`);
+
+        console.log(`Updating PCA chart with ${pcaData.length} components`);
+
+        this.pcaChart.data.labels = labels;
+        this.pcaChart.data.datasets[0].data = pcaData;
+        this.pcaChart.update();
     }
 
     generateLabels(nLayers, nHeads) {
@@ -535,6 +567,57 @@ class ClusterCatalogue {
                     });
                 }
             }]
+        });
+    }
+
+    setupPCAChart() {
+        const ctx = document.getElementById('pca-chart').getContext('2d');
+
+        // Use a single color for all bars
+        const barColor = 'rgb(100, 150, 200)';
+
+        this.pcaChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'PCA Component',
+                    data: [],
+                    backgroundColor: barColor,
+                    borderColor: 'rgba(0, 0, 0, 0.5)',
+                    borderWidth: 0.5
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            color: '#ccc',
+                            font: {
+                                size: 12
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            color: '#ccc'
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.3)'
+                        }
+                    }
+                }
+            }
         });
     }
 
