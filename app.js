@@ -63,6 +63,7 @@ class ClusterCatalogue {
             'pythia-31m',
             'pythia-70m',
             'pythia-160m',
+            'pythia-410m',
             'pythia-1b',
             'pythia-1.4b',
             'pythia-2.8b',
