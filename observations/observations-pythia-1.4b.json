@@ -13,8 +13,8 @@
   },
   "360": {
     "name": "360",
-    "observations": "High level semantic name: dm_math power sign\n\nAnatomical location: Apically on the fin attached to the left side, 1/3 serpent-lengths from the tail\n\nPresent in: pythia-410m, 160m, 70m, 31m (but very dilute, possibly umap artefact), 14m\n\nDatasets: `dm_mathematics`",
-    "lastModified": "2025-10-15T22:30:35.114Z",
+    "observations": "High level semantic name: dm_math power sign\n\nAnatomical location: Apically on the fin attached to the left side, 1/3 serpent-lengths from the tail \n\nPresent in: pythia-410m, 160m, 70m, 31m (but very dilute, possibly umap artefact), 14m\n\nDatasets: `dm_mathematics`",
+    "lastModified": "2025-10-15T22:35:17.549Z",
     "author": "github-user"
   }
 }
