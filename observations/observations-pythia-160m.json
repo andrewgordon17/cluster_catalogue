@@ -1,4 +1,22 @@
 {
+  "331": {
+    "name": "331",
+    "observations": "end brackets, often double brackets",
+    "lastModified": "2025-10-16T20:35:11.571Z",
+    "author": "github-user"
+  },
+  "332": {
+    "name": "332",
+    "observations": "`**` as a square",
+    "lastModified": "2025-10-16T20:34:55.267Z",
+    "author": "github-user"
+  },
+  "333": {
+    "name": "333",
+    "observations": "new lines largely in dm math, but also other technical docs",
+    "lastModified": "2025-10-16T20:34:41.976Z",
+    "author": "github-user"
+  },
   "336": {
     "name": "336",
     "observations": "`,`s and `and`s",
