@@ -766,80 +766,119 @@ class ClusterCatalogue {
         const url = `https://api.github.com/repos/${this.githubConfig.owner}/${this.githubConfig.repo}/contents/${filePath}`;
         console.log(`Attempting to save observations for ${this.currentDataset} to GitHub URL:`, url);
 
-        // First, get the current file to get its SHA (required for updates)
-        let sha = null;
-        try {
-            console.log('Checking if file exists...');
-            const getResponse = await fetch(url, {
-                headers: {
-                    'Authorization': `token ${this.githubConfig.token}`,
-                    'Accept': 'application/vnd.github.v3+json'
-                }
-            });
-            console.log('File check response status:', getResponse.status);
+        // Retry logic to handle concurrent updates
+        const maxRetries = 3;
+        let lastError = null;
 
-            if (getResponse.ok) {
-                const existingFile = await getResponse.json();
-                sha = existingFile.sha;
-                console.log('Found existing file with SHA:', sha);
-            } else if (getResponse.status === 404) {
-                console.log('File does not exist yet, will create new file');
-            } else {
-                const errorText = await getResponse.text();
-                console.error('Unexpected response:', getResponse.status, errorText);
-            }
-        } catch (error) {
-            console.log('Error checking file existence:', error);
-        }
-
-        // Prepare the content
-        const content = btoa(JSON.stringify(this.observations, null, 2));
-        const message = `Update cluster observations - ${new Date().toISOString()}`;
-
-        const payload = {
-            message: message,
-            content: content,
-            branch: this.githubConfig.branch
-        };
-
-        if (sha) {
-            payload.sha = sha; // Required for updates
-        }
-
-        console.log('Sending PUT request with payload:', payload);
-
-        const response = await fetch(url, {
-            method: 'PUT',
-            headers: {
-                'Authorization': `token ${this.githubConfig.token}`,
-                'Accept': 'application/vnd.github.v3+json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(payload)
-        });
-
-        console.log('PUT response status:', response.status);
-
-        if (!response.ok) {
-            const errorText = await response.text();
-            console.error('GitHub API error response:', errorText);
-
-            let errorMessage = `HTTP ${response.status}`;
+        for (let attempt = 1; attempt <= maxRetries; attempt++) {
             try {
-                const errorData = JSON.parse(errorText);
-                errorMessage = errorData.message || errorMessage;
-                console.error('Parsed error data:', errorData);
-            } catch (e) {
-                console.error('Could not parse error response as JSON');
-            }
+                console.log(`Save attempt ${attempt}/${maxRetries}`);
 
-            throw new Error(`GitHub save failed: ${errorMessage}`);
+                // Get the current file SHA (required for updates)
+                let sha = null;
+                try {
+                    console.log('Fetching current file SHA...');
+                    const getResponse = await fetch(url, {
+                        headers: {
+                            'Authorization': `token ${this.githubConfig.token}`,
+                            'Accept': 'application/vnd.github.v3+json'
+                        }
+                    });
+                    console.log('File check response status:', getResponse.status);
+
+                    if (getResponse.ok) {
+                        const existingFile = await getResponse.json();
+                        sha = existingFile.sha;
+                        console.log('Found existing file with SHA:', sha);
+
+                        // Merge remote observations with local ones
+                        // This prevents overwriting changes from other sessions
+                        const remoteObservations = JSON.parse(atob(existingFile.content));
+                        this.observations = { ...remoteObservations, ...this.observations };
+                        console.log('Merged remote observations with local changes');
+                    } else if (getResponse.status === 404) {
+                        console.log('File does not exist yet, will create new file');
+                    } else {
+                        const errorText = await getResponse.text();
+                        console.error('Unexpected response:', getResponse.status, errorText);
+                    }
+                } catch (error) {
+                    console.log('Error checking file existence:', error);
+                }
+
+                // Prepare the content
+                const content = btoa(JSON.stringify(this.observations, null, 2));
+                const message = `Update cluster observations - ${new Date().toISOString()}`;
+
+                const payload = {
+                    message: message,
+                    content: content,
+                    branch: this.githubConfig.branch
+                };
+
+                if (sha) {
+                    payload.sha = sha; // Required for updates
+                }
+
+                console.log('Sending PUT request...');
+
+                const response = await fetch(url, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `token ${this.githubConfig.token}`,
+                        'Accept': 'application/vnd.github.v3+json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                console.log('PUT response status:', response.status);
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    console.error('GitHub API error response:', errorText);
+
+                    let errorMessage = `HTTP ${response.status}`;
+                    let errorData = null;
+                    try {
+                        errorData = JSON.parse(errorText);
+                        errorMessage = errorData.message || errorMessage;
+                        console.error('Parsed error data:', errorData);
+                    } catch (e) {
+                        console.error('Could not parse error response as JSON');
+                    }
+
+                    // Check if it's a SHA mismatch error (concurrent update)
+                    if (errorMessage.includes('does not match') || errorMessage.includes('sha')) {
+                        console.warn(`SHA mismatch on attempt ${attempt}, will retry...`);
+                        lastError = new Error(`GitHub save failed: ${errorMessage}`);
+                        // Wait a bit before retrying to avoid rapid repeated requests
+                        await new Promise(resolve => setTimeout(resolve, 500 * attempt));
+                        continue; // Retry
+                    }
+
+                    throw new Error(`GitHub save failed: ${errorMessage}`);
+                }
+
+                console.log('Successfully saved observations to GitHub');
+
+                // Also save locally as backup
+                this.saveObservationsLocally();
+                return; // Success!
+
+            } catch (error) {
+                lastError = error;
+                if (attempt < maxRetries) {
+                    console.warn(`Attempt ${attempt} failed, retrying...`, error);
+                    await new Promise(resolve => setTimeout(resolve, 500 * attempt));
+                } else {
+                    console.error(`All ${maxRetries} save attempts failed`);
+                }
+            }
         }
 
-        console.log('Successfully saved observations to GitHub');
-
-        // Also save locally as backup
-        this.saveObservationsLocally();
+        // If we got here, all retries failed
+        throw lastError || new Error('Failed to save to GitHub after multiple attempts');
     }
 
     showError(message) {
