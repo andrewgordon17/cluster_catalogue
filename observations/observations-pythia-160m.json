@@ -1,8 +1,8 @@
 {
   "308": {
     "name": "308",
-    "observations": "I understand these commas! They appear after a single word/two words ",
-    "lastModified": "2025-10-16T20:51:23.798Z",
+    "observations": "I understand these commas! They appear after a single word/two words at the start of a sentence. Eg `Additionally,`, `However,`, `Finally,`",
+    "lastModified": "2025-10-16T20:51:45.333Z",
     "author": "github-user"
   },
   "309": {
