@@ -769,6 +769,7 @@ class ClusterCatalogue {
         // Retry logic to handle concurrent updates
         const maxRetries = 3;
         let lastError = null;
+        let shouldMerge = false; // Only merge on retry after conflict
 
         for (let attempt = 1; attempt <= maxRetries; attempt++) {
             try {
@@ -791,11 +792,13 @@ class ClusterCatalogue {
                         sha = existingFile.sha;
                         console.log('Found existing file with SHA:', sha);
 
-                        // Merge remote observations with local ones
-                        // This prevents overwriting changes from other sessions
-                        const remoteObservations = JSON.parse(atob(existingFile.content));
-                        this.observations = { ...remoteObservations, ...this.observations };
-                        console.log('Merged remote observations with local changes');
+                        // Only merge on retry attempts (after a conflict was detected)
+                        // This prevents unnecessary merging and reduces race condition window
+                        if (shouldMerge || attempt > 1) {
+                            const remoteObservations = JSON.parse(atob(existingFile.content));
+                            this.observations = { ...remoteObservations, ...this.observations };
+                            console.log('Merged remote observations with local changes');
+                        }
                     } else if (getResponse.status === 404) {
                         console.log('File does not exist yet, will create new file');
                     } else {
@@ -852,6 +855,7 @@ class ClusterCatalogue {
                     if (errorMessage.includes('does not match') || errorMessage.includes('sha')) {
                         console.warn(`SHA mismatch on attempt ${attempt}, will retry...`);
                         lastError = new Error(`GitHub save failed: ${errorMessage}`);
+                        shouldMerge = true; // Enable merging for next attempt
                         // Wait a bit before retrying to avoid rapid repeated requests
                         await new Promise(resolve => setTimeout(resolve, 500 * attempt));
                         continue; // Retry
