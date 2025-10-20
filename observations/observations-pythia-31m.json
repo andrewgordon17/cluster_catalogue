@@ -1,0 +1,944 @@
+{
+  "359": {
+    "name": "359",
+    "observations": "mainly numbers in dates",
+    "lastModified": "2025-10-20T11:31:01.251083Z",
+    "author": "script-import"
+  },
+  "358": {
+    "name": "358",
+    "observations": "`in` in `collect the terms in`",
+    "lastModified": "2025-10-20T11:31:01.251087Z",
+    "author": "script-import"
+  },
+  "357": {
+    "name": "357",
+    "observations": "open parens in dm math mcq",
+    "lastModified": "2025-10-20T11:31:01.251089Z",
+    "author": "script-import"
+  },
+  "356": {
+    "name": "356",
+    "observations": "dm math Simplify",
+    "lastModified": "2025-10-20T11:31:01.251091Z",
+    "author": "script-import"
+  },
+  "351": {
+    "name": "351",
+    "observations": "a bunch of numbers to do with induction mainly in dm math",
+    "lastModified": "2025-10-20T11:31:01.251093Z",
+    "author": "script-import"
+  },
+  "350": {
+    "name": "350",
+    "observations": "word parts",
+    "lastModified": "2025-10-20T11:31:01.251095Z",
+    "author": "script-import"
+  },
+  "348": {
+    "name": "348",
+    "observations": "word parts",
+    "lastModified": "2025-10-20T11:31:01.251097Z",
+    "author": "script-import"
+  },
+  "346": {
+    "name": "346",
+    "observations": "`the` in `in/of/to/from the`",
+    "lastModified": "2025-10-20T11:31:01.251098Z",
+    "author": "script-import"
+  },
+  "345": {
+    "name": "345",
+    "observations": "`the` in `in the`",
+    "lastModified": "2025-10-20T11:31:01.251100Z",
+    "author": "script-import"
+  },
+  "342": {
+    "name": "342",
+    "observations": "new lines in code",
+    "lastModified": "2025-10-20T11:31:01.251102Z",
+    "author": "script-import"
+  },
+  "339": {
+    "name": "339",
+    "observations": "mainly two spaces `  `",
+    "lastModified": "2025-10-20T11:31:01.251104Z",
+    "author": "script-import"
+  },
+  "333": {
+    "name": "333",
+    "observations": "lots of `type` in pubmed references",
+    "lastModified": "2025-10-20T11:31:01.251134Z",
+    "author": "script-import"
+  },
+  "331": {
+    "name": "331",
+    "observations": "dm math `of` in `factor of` and `derivative of`",
+    "lastModified": "2025-10-20T11:31:01.251136Z",
+    "author": "script-import"
+  },
+  "328": {
+    "name": "328",
+    "observations": "eot capital letter or 1",
+    "lastModified": "2025-10-20T11:31:01.251138Z",
+    "author": "script-import"
+  },
+  "327": {
+    "name": "327",
+    "observations": "lots of `\\n`s",
+    "lastModified": "2025-10-20T11:31:01.251140Z",
+    "author": "script-import"
+  },
+  "325": {
+    "name": "325",
+    "observations": "`-` in dates",
+    "lastModified": "2025-10-20T11:31:01.251142Z",
+    "author": "script-import"
+  },
+  "323": {
+    "name": "323",
+    "observations": "seems like a kind of numerical/formatting induction",
+    "lastModified": "2025-10-20T11:31:01.251144Z",
+    "author": "script-import"
+  },
+  "322": {
+    "name": "322",
+    "observations": "multiple levels of close parens and then punctuation",
+    "lastModified": "2025-10-20T11:31:01.251145Z",
+    "author": "script-import"
+  },
+  "318": {
+    "name": "318",
+    "observations": "`the` appearing immediately after a comma",
+    "lastModified": "2025-10-20T11:31:01.251147Z",
+    "author": "script-import"
+  },
+  "317": {
+    "name": "317",
+    "observations": "`is` in dm math `what is`",
+    "lastModified": "2025-10-20T11:31:01.251149Z",
+    "author": "script-import"
+  },
+  "316": {
+    "name": "316",
+    "observations": "seems a lot of formatting characters and function words",
+    "lastModified": "2025-10-20T11:31:01.251151Z",
+    "author": "script-import"
+  },
+  "312": {
+    "name": "312",
+    "observations": "`the` in `of/on/to` the?",
+    "lastModified": "2025-10-20T11:31:01.251153Z",
+    "author": "script-import"
+  },
+  "310": {
+    "name": "310",
+    "observations": "lots of words with \\ and / before them",
+    "lastModified": "2025-10-20T11:31:01.251155Z",
+    "author": "script-import"
+  },
+  "308": {
+    "name": "308",
+    "observations": "`s` in possessive `'s` suffix",
+    "lastModified": "2025-10-20T11:31:01.251156Z",
+    "author": "script-import"
+  },
+  "307": {
+    "name": "307",
+    "observations": "`the` in `to/in/of/is/by` the",
+    "lastModified": "2025-10-20T11:31:01.251158Z",
+    "author": "script-import"
+  },
+  "304": {
+    "name": "304",
+    "observations": "negative numbers",
+    "lastModified": "2025-10-20T11:31:01.251160Z",
+    "author": "script-import"
+  },
+  "303": {
+    "name": "303",
+    "observations": "`\\n` in dm math questions",
+    "lastModified": "2025-10-20T11:31:01.251162Z",
+    "author": "script-import"
+  },
+  "299": {
+    "name": "299",
+    "observations": "`the` in `in/of the`",
+    "lastModified": "2025-10-20T11:31:01.251163Z",
+    "author": "script-import"
+  },
+  "297": {
+    "name": "297",
+    "observations": "comas and `\\n`s as well as a bunch of other effectively spacing tokens like periods and ;",
+    "lastModified": "2025-10-20T11:31:01.251165Z",
+    "author": "script-import"
+  },
+  "296": {
+    "name": "296",
+    "observations": "lots of `\\n` at the end of `\\n\\n`",
+    "lastModified": "2025-10-20T11:31:01.251167Z",
+    "author": "script-import"
+  },
+  "295": {
+    "name": "295",
+    "observations": "`the` in `to/of the`",
+    "lastModified": "2025-10-20T11:31:01.251169Z",
+    "author": "script-import"
+  },
+  "294": {
+    "name": "294",
+    "observations": "mainly `OMNI` or `OMN`",
+    "lastModified": "2025-10-20T11:31:01.251171Z",
+    "author": "script-import"
+  },
+  "293": {
+    "name": "293",
+    "observations": "`\\n` at the end of `\\n\\n`",
+    "lastModified": "2025-10-20T11:31:01.251173Z",
+    "author": "script-import"
+  },
+  "292": {
+    "name": "292",
+    "observations": "`is` in `what is`",
+    "lastModified": "2025-10-20T11:31:01.251174Z",
+    "author": "script-import"
+  },
+  "291": {
+    "name": "291",
+    "observations": "negative numbers, also lots of 0s",
+    "lastModified": "2025-10-20T11:31:01.251176Z",
+    "author": "script-import"
+  },
+  "288": {
+    "name": "288",
+    "observations": "close delimiters and then formatting",
+    "lastModified": "2025-10-20T11:31:01.251178Z",
+    "author": "script-import"
+  },
+  "284": {
+    "name": "284",
+    "observations": "the starting delimiter `=\"`",
+    "lastModified": "2025-10-20T11:31:01.251180Z",
+    "author": "script-import"
+  },
+  "283": {
+    "name": "283",
+    "observations": "this includes two main clusters, the `Is` in `is x prime/composite` in dm math, and `many` in `how many minutes` style qs in dm math",
+    "lastModified": "2025-10-20T11:31:01.251182Z",
+    "author": "script-import"
+  },
+  "282": {
+    "name": "282",
+    "observations": "lots of text immediately after or very close to eot, though this doesn't describe everything here",
+    "lastModified": "2025-10-20T11:31:01.251184Z",
+    "author": "script-import"
+  },
+  "281": {
+    "name": "281",
+    "observations": "lots of commas after dm math equations",
+    "lastModified": "2025-10-20T11:31:01.251185Z",
+    "author": "script-import"
+  },
+  "280": {
+    "name": "280",
+    "observations": "www in urls and `=\"`, these are two clusters in the umap",
+    "lastModified": "2025-10-20T11:31:01.251187Z",
+    "author": "script-import"
+  },
+  "277": {
+    "name": "277",
+    "observations": "there are several different umap clusters in this cluster, including `in` in biggest/smallest dm math questions, `\\n` before answers in dm math, `\\n` in code, and other stuff.",
+    "lastModified": "2025-10-20T11:31:01.251189Z",
+    "author": "script-import"
+  },
+  "275": {
+    "name": "275",
+    "observations": "`\\n` typically after dm math answers",
+    "lastModified": "2025-10-20T11:31:01.251191Z",
+    "author": "script-import"
+  },
+  "273": {
+    "name": "273",
+    "observations": "`\\n` then a sequence of `\\t`s",
+    "lastModified": "2025-10-20T11:31:01.251193Z",
+    "author": "script-import"
+  },
+  "271": {
+    "name": "271",
+    "observations": "lots of single word then commas",
+    "lastModified": "2025-10-20T11:31:01.251195Z",
+    "author": "script-import"
+  },
+  "270": {
+    "name": "270",
+    "observations": "close parens and other right delimiters then typically a period.",
+    "lastModified": "2025-10-20T11:31:01.251197Z",
+    "author": "script-import"
+  },
+  "269": {
+    "name": "269",
+    "observations": "`the` in `of the`",
+    "lastModified": "2025-10-20T11:31:01.251199Z",
+    "author": "script-import"
+  },
+  "265": {
+    "name": "265",
+    "observations": "0s after a sequence of 0s typically",
+    "lastModified": "2025-10-20T11:31:01.251201Z",
+    "author": "script-import"
+  },
+  "263": {
+    "name": "263",
+    "observations": "`,`s after a sequence of capitalized words separated by `/`s in enron emails",
+    "lastModified": "2025-10-20T11:31:01.251202Z",
+    "author": "script-import"
+  },
+  "261": {
+    "name": "261",
+    "observations": "typically `the` in `in the`",
+    "lastModified": "2025-10-20T11:31:01.251204Z",
+    "author": "script-import"
+  },
+  "258": {
+    "name": "258",
+    "observations": "`a` in dm math mcq answers, strangely no other letters (except very few bs)",
+    "lastModified": "2025-10-20T11:31:01.251206Z",
+    "author": "script-import"
+  },
+  "255": {
+    "name": "255",
+    "observations": "word parts in latex, code, and enron headers(?)",
+    "lastModified": "2025-10-20T11:31:01.251208Z",
+    "author": "script-import"
+  },
+  "250": {
+    "name": "250",
+    "observations": "a bunch of `the`s after new lines",
+    "lastModified": "2025-10-20T11:31:01.251210Z",
+    "author": "script-import"
+  },
+  "246": {
+    "name": "246",
+    "observations": "`\\n` at the end of `\\n\\n` in freelaw",
+    "lastModified": "2025-10-20T11:31:01.251212Z",
+    "author": "script-import"
+  },
+  "245": {
+    "name": "245",
+    "observations": "`\\n` at the end of `\\n\\n` in pubmed",
+    "lastModified": "2025-10-20T11:31:01.251213Z",
+    "author": "script-import"
+  },
+  "244": {
+    "name": "244",
+    "observations": "mainly Let in dm math",
+    "lastModified": "2025-10-20T11:31:01.251215Z",
+    "author": "script-import"
+  },
+  "242": {
+    "name": "242",
+    "observations": "a big cluster of `\\n`s after `Q:` in stackexchange",
+    "lastModified": "2025-10-20T11:31:01.251217Z",
+    "author": "script-import"
+  },
+  "239": {
+    "name": "239",
+    "observations": "the `://` in `https://`, also at the very tail, interesting how consistent that is",
+    "lastModified": "2025-10-20T11:31:01.251219Z",
+    "author": "script-import"
+  },
+  "238": {
+    "name": "238",
+    "observations": "looks like word parts you'd largely see in enron emails",
+    "lastModified": "2025-10-20T11:31:01.251221Z",
+    "author": "script-import"
+  },
+  "237": {
+    "name": "237",
+    "observations": "`be` in `let s be` type sentences in dm math",
+    "lastModified": "2025-10-20T11:31:01.251223Z",
+    "author": "script-import"
+  },
+  "236": {
+    "name": "236",
+    "observations": "mainly `a` in `is a`",
+    "lastModified": "2025-10-20T11:31:01.251224Z",
+    "author": "script-import"
+  },
+  "235": {
+    "name": "235",
+    "observations": "lots of `the`s appearing after a word associated with relative location, eg `within/throughout/into the`, though there are also other things going on here",
+    "lastModified": "2025-10-20T11:31:01.251226Z",
+    "author": "script-import"
+  },
+  "231": {
+    "name": "231",
+    "observations": "lots of possessive `'s`,  andthe word `own`, also lots of other stuff",
+    "lastModified": "2025-10-20T11:31:01.251228Z",
+    "author": "script-import"
+  },
+  "230": {
+    "name": "230",
+    "observations": "end squiggly bracket and paren, with paren possibly having a `.` afterward",
+    "lastModified": "2025-10-20T11:31:01.251230Z",
+    "author": "script-import"
+  },
+  "229": {
+    "name": "229",
+    "observations": "lots of `a` and `an`",
+    "lastModified": "2025-10-20T11:31:01.251232Z",
+    "author": "script-import"
+  },
+  "228": {
+    "name": "228",
+    "observations": "`,` typically in contexts involving quantities, measurements, or numbers",
+    "lastModified": "2025-10-20T11:31:01.251234Z",
+    "author": "script-import"
+  },
+  "227": {
+    "name": "227",
+    "observations": "`\\n` after typically an eot token",
+    "lastModified": "2025-10-20T11:31:01.251235Z",
+    "author": "script-import"
+  },
+  "225": {
+    "name": "225",
+    "observations": "`,` mostly in regular text",
+    "lastModified": "2025-10-20T11:31:01.251237Z",
+    "author": "script-import"
+  },
+  "219": {
+    "name": "219",
+    "observations": "`\\n` after a period without any spacing before it in relatively ordinary text",
+    "lastModified": "2025-10-20T11:31:01.251239Z",
+    "author": "script-import"
+  },
+  "217": {
+    "name": "217",
+    "observations": "a bunch of eot tags",
+    "lastModified": "2025-10-20T11:31:01.251241Z",
+    "author": "script-import"
+  },
+  "215": {
+    "name": "215",
+    "observations": "`Collect` and `Expand` in dm math, I've seen this cluster before in other models",
+    "lastModified": "2025-10-20T11:31:01.251243Z",
+    "author": "script-import"
+  },
+  "213": {
+    "name": "213",
+    "observations": "`the` in `in/of/to the`",
+    "lastModified": "2025-10-20T11:31:01.251244Z",
+    "author": "script-import"
+  },
+  "211": {
+    "name": "211",
+    "observations": "numbers seemingly more as identifiers than as actual numbers, eg in freelaw. though also a fair share of actual normal numbers in dm math",
+    "lastModified": "2025-10-20T11:31:01.251246Z",
+    "author": "script-import"
+  },
+  "209": {
+    "name": "209",
+    "observations": "the two space token `  ` mainly in enron",
+    "lastModified": "2025-10-20T11:31:01.251248Z",
+    "author": "script-import"
+  },
+  "208": {
+    "name": "208",
+    "observations": "` -` mainly used in negative numbers, though this cluster is noisy",
+    "lastModified": "2025-10-20T11:31:01.251250Z",
+    "author": "script-import"
+  },
+  "203": {
+    "name": "203",
+    "observations": "` -` in dm math negative numbered answers",
+    "lastModified": "2025-10-20T11:31:01.251252Z",
+    "author": "script-import"
+  },
+  "201": {
+    "name": "201",
+    "observations": "the second `\\n` in `\\n\\n`",
+    "lastModified": "2025-10-20T11:31:01.251253Z",
+    "author": "script-import"
+  },
+  "200": {
+    "name": "200",
+    "observations": "dm math variable names!!",
+    "lastModified": "2025-10-20T11:31:01.251255Z",
+    "author": "script-import"
+  },
+  "199": {
+    "name": "199",
+    "observations": "small numbers of spaces, eg just one space, typically after a list of names in enron emails",
+    "lastModified": "2025-10-20T11:31:01.251257Z",
+    "author": "script-import"
+  },
+  "197": {
+    "name": "197",
+    "observations": "commas in lists of numbers",
+    "lastModified": "2025-10-20T11:31:01.251259Z",
+    "author": "script-import"
+  },
+  "194": {
+    "name": "194",
+    "observations": "mainly `the` in `of/to the`",
+    "lastModified": "2025-10-20T11:31:01.251260Z",
+    "author": "script-import"
+  },
+  "193": {
+    "name": "193",
+    "observations": "`\\n`s in pubmed",
+    "lastModified": "2025-10-20T11:31:01.251262Z",
+    "author": "script-import"
+  },
+  "192": {
+    "name": "192",
+    "observations": "`\\n`s in github/stackexchange/hn",
+    "lastModified": "2025-10-20T11:31:01.251264Z",
+    "author": "script-import"
+  },
+  "182": {
+    "name": "182",
+    "observations": "linebreaks, even split between `------` and `~~~`",
+    "lastModified": "2025-10-20T11:31:01.251266Z",
+    "author": "script-import"
+  },
+  "181": {
+    "name": "181",
+    "observations": "2016 mainly and some 2015, mainly in stackexchange, likely stackexchange timestamps",
+    "lastModified": "2025-10-20T11:31:01.251268Z",
+    "author": "script-import"
+  },
+  "178": {
+    "name": "178",
+    "observations": "`the` typically in `of the`",
+    "lastModified": "2025-10-20T11:31:01.251269Z",
+    "author": "script-import"
+  },
+  "177": {
+    "name": "177",
+    "observations": "`\\n`s in enron emails",
+    "lastModified": "2025-10-20T11:31:01.251272Z",
+    "author": "script-import"
+  },
+  "176": {
+    "name": "176",
+    "observations": "`\\n`s after `A:` in stackexchange",
+    "lastModified": "2025-10-20T11:31:01.251274Z",
+    "author": "script-import"
+  },
+  "175": {
+    "name": "175",
+    "observations": "multiple close parens with perhaps a question mark or punctuation afterwards, this also I think was present in a previous model",
+    "lastModified": "2025-10-20T11:31:01.251276Z",
+    "author": "script-import"
+  },
+  "174": {
+    "name": "174",
+    "observations": "`\\n`s in pubmed abstracts",
+    "lastModified": "2025-10-20T11:31:01.251278Z",
+    "author": "script-import"
+  },
+  "173": {
+    "name": "173",
+    "observations": "instances of words, typically capital words very close to an eot",
+    "lastModified": "2025-10-20T11:31:01.251280Z",
+    "author": "script-import"
+  },
+  "172": {
+    "name": "172",
+    "observations": "commas between numbers, maybe typically 0(?)",
+    "lastModified": "2025-10-20T11:31:01.251282Z",
+    "author": "script-import"
+  },
+  "170": {
+    "name": "170",
+    "observations": "commas typically after `However` in the beginning of a sentence, but more commonly after a more general short construction in the beginning of a sentence",
+    "lastModified": "2025-10-20T11:31:01.251284Z",
+    "author": "script-import"
+  },
+  "169": {
+    "name": "169",
+    "observations": "`S` in `U.S.`",
+    "lastModified": "2025-10-20T11:31:01.251285Z",
+    "author": "script-import"
+  },
+  "168": {
+    "name": "168",
+    "observations": "commas in dm math, typically after a `in base m,` construction",
+    "lastModified": "2025-10-20T11:31:01.251287Z",
+    "author": "script-import"
+  },
+  "167": {
+    "name": "167",
+    "observations": "Capital ` The` and ` This`",
+    "lastModified": "2025-10-20T11:31:01.251289Z",
+    "author": "script-import"
+  },
+  "166": {
+    "name": "166",
+    "observations": "a whole bunch of `.`",
+    "lastModified": "2025-10-20T11:31:01.251291Z",
+    "author": "script-import"
+  },
+  "165": {
+    "name": "165",
+    "observations": "` =` in dm math function definitions and suppositions",
+    "lastModified": "2025-10-20T11:31:01.251293Z",
+    "author": "script-import"
+  },
+  "164": {
+    "name": "164",
+    "observations": "`\\n` mainly in enron emails",
+    "lastModified": "2025-10-20T11:31:01.251295Z",
+    "author": "script-import"
+  },
+  "163": {
+    "name": "163",
+    "observations": "`Let` and `Suppose` in dm math",
+    "lastModified": "2025-10-20T11:31:01.251296Z",
+    "author": "script-import"
+  },
+  "160": {
+    "name": "160",
+    "observations": "multiple choice `b` and `c` in dm math",
+    "lastModified": "2025-10-20T11:31:01.251298Z",
+    "author": "script-import"
+  },
+  "159": {
+    "name": "159",
+    "observations": "`\\n` before a numerical answer in dm math",
+    "lastModified": "2025-10-20T11:31:01.251300Z",
+    "author": "script-import"
+  },
+  "158": {
+    "name": "158",
+    "observations": "single `\\t` in github",
+    "lastModified": "2025-10-20T11:31:01.251302Z",
+    "author": "script-import"
+  },
+  "156": {
+    "name": "156",
+    "observations": "`\\n` before/after names in enron emails",
+    "lastModified": "2025-10-20T11:31:01.251304Z",
+    "author": "script-import"
+  },
+  "153": {
+    "name": "153",
+    "observations": "negative signs before a dm math answer",
+    "lastModified": "2025-10-20T11:31:01.251306Z",
+    "author": "script-import"
+  },
+  "151": {
+    "name": "151",
+    "observations": "`the` typically in `in the`",
+    "lastModified": "2025-10-20T11:31:01.251307Z",
+    "author": "script-import"
+  },
+  "150": {
+    "name": "150",
+    "observations": "lots of small words like `by, can is, in, it, a`, not all labeled \"function\"",
+    "lastModified": "2025-10-20T11:31:01.251309Z",
+    "author": "script-import"
+  },
+  "148": {
+    "name": "148",
+    "observations": "lots of function words",
+    "lastModified": "2025-10-20T11:31:01.251311Z",
+    "author": "script-import"
+  },
+  "147": {
+    "name": "147",
+    "observations": "single `\\t` in github",
+    "lastModified": "2025-10-20T11:31:01.251313Z",
+    "author": "script-import"
+  },
+  "143": {
+    "name": "143",
+    "observations": "lots of open parens in dm math function calls and defs, including `sqrt(`, also lots of ` =` in dm math too",
+    "lastModified": "2025-10-20T11:31:01.251315Z",
+    "author": "script-import"
+  },
+  "138": {
+    "name": "138",
+    "observations": "numbers at the end of a very long decimal",
+    "lastModified": "2025-10-20T11:31:01.251317Z",
+    "author": "script-import"
+  },
+  "137": {
+    "name": "137",
+    "observations": "`\\n` after a linebreak, typically in hn",
+    "lastModified": "2025-10-20T11:31:01.251318Z",
+    "author": "script-import"
+  },
+  "135": {
+    "name": "135",
+    "observations": "capital words and letters just after an eot tag",
+    "lastModified": "2025-10-20T11:31:01.251320Z",
+    "author": "script-import"
+  },
+  "133": {
+    "name": "133",
+    "observations": "a bunch of `:` in stackexchange's `Q:`, but also some other stuff",
+    "lastModified": "2025-10-20T11:31:01.251322Z",
+    "author": "script-import"
+  },
+  "130": {
+    "name": "130",
+    "observations": "mainly question marks in dm math",
+    "lastModified": "2025-10-20T11:31:01.251324Z",
+    "author": "script-import"
+  },
+  "127": {
+    "name": "127",
+    "observations": "`\\n` before `\\n\\n`",
+    "lastModified": "2025-10-20T11:31:01.251325Z",
+    "author": "script-import"
+  },
+  "123": {
+    "name": "123",
+    "observations": "mainly function words in particular `a` and `an`",
+    "lastModified": "2025-10-20T11:31:01.251327Z",
+    "author": "script-import"
+  },
+  "122": {
+    "name": "122",
+    "observations": "commas and new lines",
+    "lastModified": "2025-10-20T11:31:01.251329Z",
+    "author": "script-import"
+  },
+  "120": {
+    "name": "120",
+    "observations": "mainly ` =` in dm math function defs",
+    "lastModified": "2025-10-20T11:31:01.251331Z",
+    "author": "script-import"
+  },
+  "119": {
+    "name": "119",
+    "observations": "primarially ` and` immediately after a comma",
+    "lastModified": "2025-10-20T11:31:01.251333Z",
+    "author": "script-import"
+  },
+  "117": {
+    "name": "117",
+    "observations": "0s in dm math",
+    "lastModified": "2025-10-20T11:31:01.251334Z",
+    "author": "script-import"
+  },
+  "113": {
+    "name": "113",
+    "observations": "Let and true and false in dm math",
+    "lastModified": "2025-10-20T11:31:01.251336Z",
+    "author": "script-import"
+  },
+  "108": {
+    "name": "108",
+    "observations": "new lines in code",
+    "lastModified": "2025-10-20T11:31:01.251338Z",
+    "author": "script-import"
+  },
+  "106": {
+    "name": "106",
+    "observations": "mainly ` the` in `which/what is the` in dm math",
+    "lastModified": "2025-10-20T11:31:01.251340Z",
+    "author": "script-import"
+  },
+  "103": {
+    "name": "103",
+    "observations": "mainly `=\"` in github",
+    "lastModified": "2025-10-20T11:31:01.251341Z",
+    "author": "script-import"
+  },
+  "99": {
+    "name": "99",
+    "observations": "`the` in `to/of/in the`",
+    "lastModified": "2025-10-20T11:31:01.251343Z",
+    "author": "script-import"
+  },
+  "95": {
+    "name": "95",
+    "observations": "the word Category in wikipedia, also appears much in other models",
+    "lastModified": "2025-10-20T11:31:01.251345Z",
+    "author": "script-import"
+  },
+  "94": {
+    "name": "94",
+    "observations": "`the` in `and/of/for/in the`",
+    "lastModified": "2025-10-20T11:31:01.251347Z",
+    "author": "script-import"
+  },
+  "93": {
+    "name": "93",
+    "observations": "`(` in function definitions, including perhaps github/stackexchange but predominantly dm math",
+    "lastModified": "2025-10-20T11:31:01.251349Z",
+    "author": "script-import"
+  },
+  "92": {
+    "name": "92",
+    "observations": "`0`s in a bunch of contexts, often induction patterns, often preceeding a decimal point; `\\n`s in pubmed and arxiv",
+    "lastModified": "2025-10-20T11:31:01.251353Z",
+    "author": "script-import"
+  },
+  "89": {
+    "name": "89",
+    "observations": "`\\n` after a line break mainly in hn",
+    "lastModified": "2025-10-20T11:31:01.251355Z",
+    "author": "script-import"
+  },
+  "85": {
+    "name": "85",
+    "observations": "a bunch of commas",
+    "lastModified": "2025-10-20T11:31:01.251357Z",
+    "author": "script-import"
+  },
+  "83": {
+    "name": "83",
+    "observations": "the second `\\n` in `\\n\\n` in pile-cc and wikipedia",
+    "lastModified": "2025-10-20T11:31:01.251359Z",
+    "author": "script-import"
+  },
+  "81": {
+    "name": "81",
+    "observations": "`0`s after a sequence of 0s",
+    "lastModified": "2025-10-20T11:31:01.251361Z",
+    "author": "script-import"
+  },
+  "71": {
+    "name": "71",
+    "observations": "`.` as a decimal in dm math, and p-values",
+    "lastModified": "2025-10-20T11:31:01.251366Z",
+    "author": "script-import"
+  },
+  "70": {
+    "name": "70",
+    "observations": "semicolons `;` and colons `:` with colons appearing in \"formatting\" locations, eg after email lists or the Q/A in stackexchange",
+    "lastModified": "2025-10-20T11:31:01.251368Z",
+    "author": "script-import"
+  },
+  "68": {
+    "name": "68",
+    "observations": "`and` in technical sentences",
+    "lastModified": "2025-10-20T11:31:01.251370Z",
+    "author": "script-import"
+  },
+  "66": {
+    "name": "66",
+    "observations": "dm math variables",
+    "lastModified": "2025-10-20T11:31:01.251372Z",
+    "author": "script-import"
+  },
+  "60": {
+    "name": "60",
+    "observations": "lots of `\\n`",
+    "lastModified": "2025-10-20T11:31:01.251373Z",
+    "author": "script-import"
+  },
+  "57": {
+    "name": "57",
+    "observations": "the typically after a single word then comma starting a sentence",
+    "lastModified": "2025-10-20T11:31:01.251375Z",
+    "author": "script-import"
+  },
+  "56": {
+    "name": "56",
+    "observations": "left parens in dm math mcqs",
+    "lastModified": "2025-10-20T11:31:01.251377Z",
+    "author": "script-import"
+  },
+  "48": {
+    "name": "48",
+    "observations": "` =` in function definitions in dm math",
+    "lastModified": "2025-10-20T11:31:01.251379Z",
+    "author": "script-import"
+  },
+  "47": {
+    "name": "47",
+    "observations": "primarily `of/to/in the`",
+    "lastModified": "2025-10-20T11:31:01.251381Z",
+    "author": "script-import"
+  },
+  "45": {
+    "name": "45",
+    "observations": "mainly the token `\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7`, which appears a bunch in pubmed",
+    "lastModified": "2025-10-20T11:31:01.251383Z",
+    "author": "script-import"
+  },
+  "44": {
+    "name": "44",
+    "observations": "lots of `the` in `in the`",
+    "lastModified": "2025-10-20T11:31:01.251385Z",
+    "author": "script-import"
+  },
+  "37": {
+    "name": "37",
+    "observations": "`the` coming after abunch of not extremely short words",
+    "lastModified": "2025-10-20T11:31:01.251387Z",
+    "author": "script-import"
+  },
+  "36": {
+    "name": "36",
+    "observations": "`the` in `with/for/in the`",
+    "lastModified": "2025-10-20T11:31:01.251389Z",
+    "author": "script-import"
+  },
+  "30": {
+    "name": "30",
+    "observations": "`,`s in dates, `.`s in abbreviations, and `-` in hyphenations",
+    "lastModified": "2025-10-20T11:31:01.251444Z",
+    "author": "script-import"
+  },
+  "29": {
+    "name": "29",
+    "observations": "often `\\n` before the ansewr in dm math",
+    "lastModified": "2025-10-20T11:31:01.251447Z",
+    "author": "script-import"
+  },
+  "24": {
+    "name": "24",
+    "observations": "the first `\\n` in `\\n\\n` in hackernews",
+    "lastModified": "2025-10-20T11:31:01.251449Z",
+    "author": "script-import"
+  },
+  "23": {
+    "name": "23",
+    "observations": "`\\n`s in technical subjects",
+    "lastModified": "2025-10-20T11:31:01.251451Z",
+    "author": "script-import"
+  },
+  "16": {
+    "name": "16",
+    "observations": "`the` in `of the`",
+    "lastModified": "2025-10-20T11:31:01.251453Z",
+    "author": "script-import"
+  },
+  "8": {
+    "name": "8",
+    "observations": "often the word nearest/between, and other number words",
+    "lastModified": "2025-10-20T11:31:01.251455Z",
+    "author": "script-import"
+  },
+  "7": {
+    "name": "7",
+    "observations": "`of` mainly in dm math",
+    "lastModified": "2025-10-20T11:31:01.251457Z",
+    "author": "script-import"
+  },
+  "5": {
+    "name": "5",
+    "observations": "a whole bunch of function words",
+    "lastModified": "2025-10-20T11:31:01.251459Z",
+    "author": "script-import"
+  },
+  "4": {
+    "name": "4",
+    "observations": "a whole bunch of `\\n` at the end of `\\n\\n`",
+    "lastModified": "2025-10-20T11:31:01.251461Z",
+    "author": "script-import"
+  },
+  "3": {
+    "name": "3",
+    "observations": "wow! lots of induction in this one",
+    "lastModified": "2025-10-20T11:31:01.251463Z",
+    "author": "script-import"
+  }
+}

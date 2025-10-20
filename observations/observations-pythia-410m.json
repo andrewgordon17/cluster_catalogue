@@ -1,0 +1,266 @@
+{
+  "363": {
+    "name": "363",
+    "observations": "is/was/has",
+    "lastModified": "2025-10-20T11:31:01.248564Z",
+    "author": "script-import"
+  },
+  "360": {
+    "name": "360",
+    "observations": "closest/smallest/nearest/biggest, also see this in pythia-1.4b",
+    "lastModified": "2025-10-20T11:31:01.248568Z",
+    "author": "script-import"
+  },
+  "333": {
+    "name": "333",
+    "observations": "seems largely made up of syntactic `.`s",
+    "lastModified": "2025-10-20T11:31:01.248570Z",
+    "author": "script-import"
+  },
+  "325": {
+    "name": "325",
+    "observations": "question marks in dm math",
+    "lastModified": "2025-10-20T11:31:01.248572Z",
+    "author": "script-import"
+  },
+  "318": {
+    "name": "318",
+    "observations": "head of butterfly",
+    "lastModified": "2025-10-20T11:31:01.248574Z",
+    "author": "script-import"
+  },
+  "314": {
+    "name": "314",
+    "observations": "multiplication signs in dm math. Nice that we get $\\approx 100 \\pi$ for this",
+    "lastModified": "2025-10-20T11:31:01.248576Z",
+    "author": "script-import"
+  },
+  "311": {
+    "name": "311",
+    "observations": "commas at the end of a list, and some new lines. the umap suggests these should be two different clusters though",
+    "lastModified": "2025-10-20T11:31:01.248583Z",
+    "author": "script-import"
+  },
+  "300": {
+    "name": "300",
+    "observations": "capital words in dm math, also saw some of this in 1.4b too",
+    "lastModified": "2025-10-20T11:31:01.248585Z",
+    "author": "script-import"
+  },
+  "294": {
+    "name": "294",
+    "observations": "large & small numbers of spaces",
+    "lastModified": "2025-10-20T11:31:01.248587Z",
+    "author": "script-import"
+  },
+  "293": {
+    "name": "293",
+    "observations": "Q immediately after eot",
+    "lastModified": "2025-10-20T11:31:01.248589Z",
+    "author": "script-import"
+  },
+  "287": {
+    "name": "287",
+    "observations": "multiplication `*` in dm math",
+    "lastModified": "2025-10-20T11:31:01.248591Z",
+    "author": "script-import"
+  },
+  "286": {
+    "name": "286",
+    "observations": "`b`, `c`, `d` in mc choice dm math, strangely relatively few `a`s",
+    "lastModified": "2025-10-20T11:31:01.248593Z",
+    "author": "script-import"
+  },
+  "285": {
+    "name": "285",
+    "observations": "was, is, were, has",
+    "lastModified": "2025-10-20T11:31:01.248595Z",
+    "author": "script-import"
+  },
+  "283": {
+    "name": "283",
+    "observations": "commas in lists, more words, also a lot of `\\n` and `the`s mixed in there, and some `.`s",
+    "lastModified": "2025-10-20T11:31:01.248597Z",
+    "author": "script-import"
+  },
+  "272": {
+    "name": "272",
+    "observations": "let and suppose in dm math with and without preceeding space",
+    "lastModified": "2025-10-20T11:31:01.248599Z",
+    "author": "script-import"
+  },
+  "268": {
+    "name": "268",
+    "observations": "`.`s, there was also a similarly large `.` cluster in the right position in 1.4b too",
+    "lastModified": "2025-10-20T11:31:01.248600Z",
+    "author": "script-import"
+  },
+  "261": {
+    "name": "261",
+    "observations": "`e` in i.e., not in `do/did not`, S in `U.S`, mixed in are lots of other stuff too though",
+    "lastModified": "2025-10-20T11:31:01.248602Z",
+    "author": "script-import"
+  },
+  "254": {
+    "name": "254",
+    "observations": "mainly commas",
+    "lastModified": "2025-10-20T11:31:01.248604Z",
+    "author": "script-import"
+  },
+  "251": {
+    "name": "251",
+    "observations": "a bunch of end delimiters  not extremely selected for by being an end of delimiter token",
+    "lastModified": "2025-10-20T11:31:01.248606Z",
+    "author": "script-import"
+  },
+  "250": {
+    "name": "250",
+    "observations": "very and",
+    "lastModified": "2025-10-20T11:31:01.248608Z",
+    "author": "script-import"
+  },
+  "149": {
+    "name": "149",
+    "observations": "lots of eot",
+    "lastModified": "2025-10-20T11:31:01.248610Z",
+    "author": "script-import"
+  },
+  "239": {
+    "name": "239",
+    "observations": "things immediately after eot, seems relatively concentrated re mean suscs",
+    "lastModified": "2025-10-20T11:31:01.248614Z",
+    "author": "script-import"
+  },
+  "227": {
+    "name": "227",
+    "observations": "a whole bunch of tos and ofs (and some fors)",
+    "lastModified": "2025-10-20T11:31:01.248617Z",
+    "author": "script-import"
+  },
+  "224": {
+    "name": "224",
+    "observations": "open parentheses in function defs in dm math",
+    "lastModified": "2025-10-20T11:31:01.248619Z",
+    "author": "script-import"
+  },
+  "219": {
+    "name": "219",
+    "observations": "`s` suffix to denote posession",
+    "lastModified": "2025-10-20T11:31:01.248621Z",
+    "author": "script-import"
+  },
+  "216": {
+    "name": "216",
+    "observations": "big the cluster",
+    "lastModified": "2025-10-20T11:31:01.248623Z",
+    "author": "script-import"
+  },
+  "212": {
+    "name": "212",
+    "observations": "`.` in shortennings and some decimals",
+    "lastModified": "2025-10-20T11:31:01.248625Z",
+    "author": "script-import"
+  },
+  "209": {
+    "name": "209",
+    "observations": "negative signs in dm math but not very clean",
+    "lastModified": "2025-10-20T11:31:01.248626Z",
+    "author": "script-import"
+  },
+  "205": {
+    "name": "205",
+    "observations": "`.` in shortenings",
+    "lastModified": "2025-10-20T11:31:01.248628Z",
+    "author": "script-import"
+  },
+  "199": {
+    "name": "199",
+    "observations": "which, calculate, determine, give, wrt in dm math. Those all seem like related words",
+    "lastModified": "2025-10-20T11:31:01.248630Z",
+    "author": "script-import"
+  },
+  "194": {
+    "name": "194",
+    "observations": "`,` in lists in dm math",
+    "lastModified": "2025-10-20T11:31:01.248632Z",
+    "author": "script-import"
+  },
+  "184": {
+    "name": "184",
+    "observations": "negative signs of numbers in lists and also `/` in file systems",
+    "lastModified": "2025-10-20T11:31:01.248634Z",
+    "author": "script-import"
+  },
+  "183": {
+    "name": "183",
+    "observations": "big the cluster",
+    "lastModified": "2025-10-20T11:31:01.248636Z",
+    "author": "script-import"
+  },
+  "168": {
+    "name": "168",
+    "observations": "`*` in multiplication in dm math",
+    "lastModified": "2025-10-20T11:31:01.248638Z",
+    "author": "script-import"
+  },
+  "160": {
+    "name": "160",
+    "observations": "`)` in mc choice options in dm math, and in functions in dm math, though on the umap those seem far away",
+    "lastModified": "2025-10-20T11:31:01.248640Z",
+    "author": "script-import"
+  },
+  "159": {
+    "name": "159",
+    "observations": "`)` and `).` mainly in function calls in dm math",
+    "lastModified": "2025-10-20T11:31:01.248642Z",
+    "author": "script-import"
+  },
+  "154": {
+    "name": "154",
+    "observations": "which, betwee, have, about by, idk all those seem somewhat similar",
+    "lastModified": "2025-10-20T11:31:01.248643Z",
+    "author": "script-import"
+  },
+  "145": {
+    "name": "145",
+    "observations": "reasonably large number of `*` used in mult in dm math",
+    "lastModified": "2025-10-20T11:31:01.248645Z",
+    "author": "script-import"
+  },
+  "120": {
+    "name": "120",
+    "observations": "`.`s in shortennings and urls",
+    "lastModified": "2025-10-20T11:31:01.248647Z",
+    "author": "script-import"
+  },
+  "96": {
+    "name": "96",
+    "observations": "mainly `**` in dm math for powers",
+    "lastModified": "2025-10-20T11:31:01.248649Z",
+    "author": "script-import"
+  },
+  "85": {
+    "name": "85",
+    "observations": "a bunch of True/False in dm math but not extremely clean",
+    "lastModified": "2025-10-20T11:31:01.248651Z",
+    "author": "script-import"
+  },
+  "77": {
+    "name": "77",
+    "observations": "includes a bunch of variable names, but also other stuff",
+    "lastModified": "2025-10-20T11:31:01.248653Z",
+    "author": "script-import"
+  },
+  "64": {
+    "name": "64",
+    "observations": "These uses of of seem very similar to one another, but I'm not sure how. `variety of/activity/loss/behavior/management of`, maybe I'm going crazy though",
+    "lastModified": "2025-10-20T11:31:01.248655Z",
+    "author": "script-import"
+  },
+  "44": {
+    "name": "44",
+    "observations": "end parenthases for function calls and definitions, some mcq",
+    "lastModified": "2025-10-20T11:31:01.248657Z",
+    "author": "script-import"
+  }
+}
