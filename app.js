@@ -77,8 +77,8 @@ class ClusterCatalogue {
             return 'http://localhost:8787/api';
         }
 
-        // Production: same origin
-        return window.location.origin + '/api';
+        // Production: use deployed Workers URL
+        return 'https://cluster-catalogue-api.rainbowserpent.workers.dev/api';
     }
 
     /**
