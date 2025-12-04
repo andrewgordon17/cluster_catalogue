@@ -155,16 +155,7 @@ function getAuthToken(request) {
 }
 
 async function requireAuth(request, env) {
-  const token = getAuthToken(request);
-  if (!token) {
-    return jsonResponse({ error: 'Unauthorized' }, 401);
-  }
-
-  const claims = await verifyJWT(token, env.SESSION_SECRET);
-  if (!claims) {
-    return jsonResponse({ error: 'Invalid or expired token' }, 401);
-  }
-
+  // Authentication disabled - allow all requests
   return null; // Auth successful
 }
 

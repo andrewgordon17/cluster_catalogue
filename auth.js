@@ -12,11 +12,8 @@ class AuthManager {
    * Check if user is authenticated, show password modal if not
    */
   async ensureAuthenticated() {
-    if (this.apiClient.isAuthenticated()) {
-      return true;
-    }
-
-    return await this.showPasswordModal();
+    // Authentication disabled - always return true
+    return true;
   }
 
   /**
