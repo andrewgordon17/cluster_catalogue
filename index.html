@@ -98,6 +98,69 @@
 
         .password-form button {
             background: #007acc;
+        }
+
+        .password-error {
+            color: #ff6b6b;
+            margin-top: 10px;
+            font-size: 14px;
+            display: none;
+        }
+
+        .good-toggle-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 4px;
+        }
+
+        .good-toggle-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .good-toggle-group label {
+            margin: 0;
+            cursor: pointer;
+            font-weight: normal;
+        }
+
+        .good-toggle-group small {
+            color: #888;
+            font-size: 12px;
+            display: block;
+            margin-left: 30px;
+        }
+
+        .gdocs-sync {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12px;
+            color: #888;
+        }
+
+        .gdocs-sync button {
+            background: #555;
+            color: #fff;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 11px;
+        }
+
+        .gdocs-sync button:hover {
+            background: #666;
+        }
+
+        .password-form button {
+            background: #007acc;
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -296,19 +359,43 @@
     </style>
 </head>
 <body>
-    <div id="password-modal" class="password-modal">
-        <div class="password-form">
+    <div id="password-modal" class="password-modal" style="display: none;">
+        <form class="password-form" id="password-form">
             <h2>Cluster Catalogue Access</h2>
             <p style="color: #ccc; margin-bottom: 15px; font-size: 14px;">
-                Enter a password or GitHub Personal Access Token for collaborative observations
+                Enter the shared password to access and edit cluster observations
             </p>
-            <input type="password" id="password-input" placeholder="Password or GitHub Token (ghp_...)" />
+            <input type="password" id="password-input" placeholder="Enter password" autocomplete="off" />
+            <div id="password-error" class="password-error"></div>
             <br>
-            <button onclick="checkPassword()">Enter</button>
-            <div style="margin-top: 15px; font-size: 12px; color: #888; text-align: left;">
-                <strong>Passwords:</strong> cluster123, research2024, lang3<br>
-                <strong>GitHub Token:</strong> Paste your personal access token for shared observations
+            <button type="submit">Enter</button>
+        </form>
+    </div>
+
+    <div id="conflict-modal" class="password-modal" style="display: none;">
+        <div class="password-form" style="max-width: 600px;">
+            <h2>Editing Conflict Detected</h2>
+            <p style="color: #ccc; margin-bottom: 15px; font-size: 14px;">
+                Another user modified this cluster while you were editing.
+                Choose how to resolve the conflict:
+            </p>
+
+            <div style="text-align: left; margin: 20px 0;">
+                <div style="background: #2a2a2a; padding: 15px; border-radius: 4px; margin-bottom: 15px;">
+                    <strong>Your Version:</strong>
+                    <pre id="conflict-your-version" style="margin-top: 10px; color: #ccc; white-space: pre-wrap; font-size: 12px;"></pre>
+                </div>
+
+                <div style="background: #2a2a2a; padding: 15px; border-radius: 4px;">
+                    <strong>Current Version:</strong>
+                    <pre id="conflict-current-version" style="margin-top: 10px; color: #ccc; white-space: pre-wrap; font-size: 12px;"></pre>
+                </div>
             </div>
+
+            <button onclick="window.conflictResolver && conflictResolver.resolveConflict('keep-mine')">Keep My Version</button>
+            <button onclick="window.conflictResolver && conflictResolver.resolveConflict('use-theirs')">Use Their Version</button>
+            <button onclick="window.conflictResolver && conflictResolver.resolveConflict('merge')">Merge Both</button>
+            <button onclick="window.conflictResolver && conflictResolver.hideConflictModal()" style="background: #666;">Cancel</button>
         </div>
     </div>
 
@@ -323,6 +410,10 @@
                     <option>Loading...</option>
                 </select>
                 <button id="next-btn" onclick="navigateCluster(1)">→</button>
+            </div>
+            <div class="gdocs-sync" id="gdocs-sync">
+                <span id="gdocs-last-sync">Last synced: Never</span>
+                <button onclick="triggerGoogleDocsSync()">Sync Now</button>
             </div>
             <div class="save-status" id="save-status">Ready</div>
         </div>
@@ -372,6 +463,13 @@
                         <label for="cluster-name">Cluster Name</label>
                         <input type="text" id="cluster-name" onchange="saveData()">
                     </div>
+
+                    <div class="good-toggle-group">
+                        <input type="checkbox" id="good-toggle" onchange="saveData()">
+                        <label for="good-toggle">Mark as "Good" Cluster</label>
+                        <small>Good clusters are highlighted in reports and Google Docs</small>
+                    </div>
+
                     <div class="form-group">
                         <label for="observations">Observations</label>
                         <textarea id="observations" placeholder="Record your observations about this cluster..." onchange="saveData()"></textarea>
@@ -395,6 +493,11 @@
         </div>
     </div>
 
-    <script src="app.js?v=3"></script>
+    <!-- Load modules -->
+    <script src="api-client.js"></script>
+    <script src="field-renderer.js"></script>
+    <script src="conflict-resolver.js"></script>
+    <script src="auth.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

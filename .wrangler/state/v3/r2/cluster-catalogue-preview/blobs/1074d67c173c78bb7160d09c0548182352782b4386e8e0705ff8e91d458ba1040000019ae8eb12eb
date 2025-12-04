@@ -1,0 +1,13 @@
+{
+  "cluster_id": "1",
+  "model": "TEST",
+  "name": "Test Cluster 1",
+  "observations": "",
+  "good": false,
+  "metadata": {
+    "created": "2025-12-04T00:00:00Z",
+    "last_modified": "2025-12-04T00:00:00Z",
+    "modified_by": "admin",
+    "version": 1
+  }
+}

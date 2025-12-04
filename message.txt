@@ -1,0 +1,918 @@
+# 1.4b
+cluster 334: just after eot cluster, also 320
+
+329 seems to appear very early?
+
+324 tabs
+
+322 times
+
+345 /-??
+
+317 `\` in latex?
+
+296: jsut after eot in the middle of a context
+
+295: +/-/*
+
+289: equals?
+
+288 \r\n
+
+`$` in latex as a right delimiter 286
+
+282: commas in a list of numbers
+
+the in dm math but also some commas, maybe the hint needed to discover the origin of the wing 259
+
+254: `.` mainly in urls
+
+230: closest, smallest, nearest, and biggest in dm math, github, enron
+
+195 seems mysterious
+
+194: new lines in dm math
+
+185: dm math end parentheses for answer choices
+
+175: this is the very tail 
+
+167 be in dm math
+
+163 tons and tons of periods
+
+162 hyphenation
+
+161 negatives in math
+
+136 bunch of spaces, especially in github
+
+98 suppose/lets in dm math
+
+95 `.` in dm math
+
+91 closing parens and ]s
+
+62 more negative signs
+
+38 variable names?
+
+25 ** again
+
+# 410m
+363 is/was/has
+
+360 closest/smallest/nearest/biggest, also see this in pythia-1.4b
+
+333 seems largely made up of syntactic `.`s
+
+325 question marks in dm math
+
+318 head of butterfly
+
+314 multiplication signs in dm math. Nice that we get $\approx 100 \pi$ for this
+
+a thing I have noticed here and in 1.4b is that there's a large number of `to`s and `for`s as well, often seen together
+
+311 commas at the end of a list, and some new lines. the umap suggests these should be two different clusters though
+
+300 capital words in dm math, also saw some of this in 1.4b too
+
+294 large & small numbers of spaces
+
+293 Q immediately after eot
+
+287 multiplication `*` in dm math
+
+286 `b`, `c`, `d` in mc choice dm math, strangely relatively few `a`s
+
+285 was, is, were, has
+
+283 commas in lists, more words, also a lot of `\n` and `the`s mixed in there, and some `.`s
+
+272 let and suppose in dm math with and without preceeding space
+
+268 `.`s, there was also a similarly large `.` cluster in the right position in 1.4b too
+
+261 `e` in i.e., not in `do/did not`, S in `U.S`, mixed in are lots of other stuff too though
+
+254 mainly commas
+
+251 a bunch of end delimiters  not extremely selected for by being an end of delimiter token
+
+250 very and
+
+149 lots of eot
+
+248, 247 the in dm math
+
+239 things immediately after eot, seems relatively concentrated re mean suscs
+
+228, periods in shortenings
+
+227 a whole bunch of tos and ofs (and some fors)
+
+224 open parentheses in function defs in dm math
+
+219 `s` suffix to denote posession
+
+216 big the cluster
+
+212 `.` in shortennings and some decimals
+
+209 negative signs in dm math but not very clean
+
+205 `.` in shortenings
+
+199 which, calculate, determine, give, wrt in dm math. Those all seem like related words
+
+194 `,` in lists in dm math
+
+184 negative signs of numbers in lists and also `/` in file systems
+
+183 big the cluster
+
+168 `*` in multiplication in dm math
+
+160 `)` in mc choice options in dm math, and in functions in dm math, though on the umap those seem far away
+
+159 `)` and `).` mainly in function calls in dm math
+
+154 which, betwee, have, about by, idk all those seem somewhat similar
+
+145 reasonably large number of `*` used in mult in dm math
+
+120 `.`s in shortennings and urls
+
+96 mainly `**` in dm math for powers
+
+85 a bunch of True/False in dm math but not extremely clean
+
+77 includes a bunch of variable names, but also other stuff
+
+64 These uses of of seem very similar to one another, but I'm not sure how. `variety of/activity/loss/behavior/management of`, maybe I'm going crazy though
+
+44 end parenthases for function calls and definitions, some mcq
+
+# 160m
+360 commas in lists, mainly lists in dm math
+
+358 dm math answers that are false
+
+354 a large fraction of this are answers which are a in dm math, i have been looking for a cluster like this
+
+`-` in structured strings (code, dates, etc)
+
+` -` in subtraction problems 309
+
+using this notebook now instead of the cluster catalogue
+
+308 I understand these commas! They appear after a single word/two words at the start of a sentence. Eg `Additionally,`, `However,`, `Finally,`
+
+307 periods in shortennings
+
+304 sequences of spaces
+
+303 `:` in stackexchange just after answers
+
+301 open parens during mathematical function calls
+
+297, 296 new lines with commas
+
+295 `*` and `**` for multiplication and power in dm math, they are minorly separated in the umap
+
+290 the particular `························` token of spaces, looks to be used a bunch in pubmed 
+
+289 closing delimeters with formatting stuff around them
+
+436 `-` in pubmed references
+
+285 `\n` in the middle of a sentence without space in front
+
+283 variables largely in dm math, also seemingly those variables which are not often used in english
+
+279 closing parentheses in functions
+
+408 `+` in equations in dm math
+
+277 impure end brackets, eg `)` and `]` but with something before or after, possibly the model is thinking semicolons are a kind of end bracket in code since many pair `)` or `]` with another end delimiter 
+
+276 dm math answers that aren't a. Maybe the reason there's no a is because a is when it learns "hey, this is doing mc choice stuff"
+
+271 x in octal digits, also AA in weird enron email stuff
+
+269 more weird end brackets
+
+266 this is not the first such cluster I've noticed, but I've noticed that the and this and 1 often appear together
+
+Note: I think it may be interesting to make a co-occurrence matrix for each token, eg how much do the token counts of each token in each cluster correlate with each other
+
+265 normal periods, but for some reason mostly in medicine texts
+
+262 `in` in dm math when asking to collect the terms in an equation
+
+261 `\n` in freelaw and hackernews
+
+257 `0`s repeated after a bunch of other 0s in the text
+
+253 `,` appearing in lists of numbers
+
+250 `?`s not in dm math, seems largely in stackexchange and hn. A wild hypothesis is that all these seem maybe rhetorical questions, though perhaps there are just more rhetorical questions than non-rhetorical questions
+
+245 interesting that there are lots of commas and `\n` here
+
+242 capital words after eot, this seems a motif across scale
+
+241 lots of `\n`
+
+240 largely end quotes
+
+`is` in what is
+
+229 nearest and smallest
+
+228 `\n` in dm math, also reasonable number of `,`s
+
+225 `=` in dm math after a let, so for var defs
+
+216 `:` largely after `Q` in stackexchange
+
+214 close parentheses and brackets after technical stuff
+
+212 capital letters
+
+211 commas after a single word starting a sentence and ands 
+
+209 addition `+` in dm math
+
+208 which is and what is
+
+206 negative numbers and negative signs
+
+205 end parentheses in function definitions
+
+203 0s after a sequence of 0s again
+
+202 trues and falsesin dm math
+
+199 close parentheses then `,` or `.`
+
+194 `.` at the end of sentences in dm math. sometimes decimals, but mostly end of sentences
+
+191 `h` in `'th`
+
+188 `remainder` in dm math
+
+182 `\n` and a sequence of `\t`s, also some other weird spacing stuff like `\qquad`
+
+178 What `is`
+
+171 decimal points `.`
+
+168 close paren open parens eg `)*(` mostly in dm math, they all seem to have to do with `*` or `**`
+
+163 `.` in the middle of words or numbers
+
+159 negative signs
+
+155 multiplication `*`
+
+152 `:` after `Category` largely in wikipedia
+
+149 end paren `)` in dm math
+
+143 `\n` after `Q: ` and `A: ` in stackexchange
+
+142 `Let` and `Suppose` in dm math
+
+141 `\n` largely in code
+
+137 all of these are induction, largely to do with technical topics, debian is mentioned a bit
+
+133 negative signs at the start of an equation or number in a list of numbers
+
+125 end paren then a comma period or `;` 
+
+118 `=` in function references and defs
+
+109 url suffixes like com net and org, but mostly com, also some other unrelated seeming stuff
+
+104 `*` and `**` in dm math
+
+101 `the` in `of/in/on the`
+
+99 `the` in `of/in/on/to the`
+
+98 negative signs in dm math answers
+
+94 `{` in largely latex, also latex more generally
+
+90 `the` in `from/for/in/by` the
+
+89 eot then a capital letter or word or strange text
+
+86 `is` in `what is`
+
+85 a whole bunch of `the`s
+
+83 `,`s in lists of number and number-like objects not in dm math
+
+82 commas and `\n`
+
+81 a bunch of `\n`s
+
+80 `\n`s after line breaks and `A:` in stackexchange
+
+79, 74 `**` in dm math
+
+78 mainly `+` and `*` in dm math
+
+67 single digit integers as powers in dm math
+
+66 single digit integers in dm math, many of them induction patterns though its not clear how relevant that is
+
+63 `as` in `such as` and `as well as`
+
+62 long sequences of spaces, many of which are induction patterns
+
+60 `\n` in hacker news typically after a line break
+
+54 a whole bunch of `\n`s
+
+52 `-` largely in pubmed reference formatting and other sorts of formatting such as dates
+
+48 close paren `)` in dm math
+
+42 sequence of spaces often in enron, often induction
+
+30 instructional words in dm math, eg Which, Determine, Calculate, etc
+
+29 use of minutes in dm math
+
+25 `'t` contraction eg in `don't`
+
+23 `'s` used for possession at the end of a word
+
+22 negatives and negative numbers in dm math
+
+20 open parens `(` in function defs in dm math
+
+8 modifiers to parentheses?
+
+# 70m
+359 new lines in dm math
+
+355 feels like very similar `of`s but maybe I'm crazy
+
+354 a and c in dm math mcqs
+
+353 equality in dm math definitions
+
+348 often the second word in a hyphenation. Note how MLP1 is very very negative. This is a good candidate for ablation tests
+
+344 a bunch of numbers in pubmed citations, many induction
+
+341 negative single digit integers
+
+337 thes and thats, saw similar pattern in 160m, also has concentrated positive suscs in the mlps
+
+320 mainly negatives in dm math
+
+319 `-` in `anti-` and `non-` prefixes
+
+315 equality ` =` in dm math function defs
+
+312 Solve in dm math, seems to have fairly concentrated mlp neg susc
+
+311 periods, but also pretty concentrated mlps
+
+310 these are a bunch of weird things in enron emails, I mention because I feel like I've seen similar stuff in the larger models
+
+308 `the`s immediately after a comma
+
+302 Q immediately after eot in stackexchange
+
+299 end `"` with some stuff at the end, eg `">`
+
+297 0 after a bunch of zeros, especially octal numbers, saw similar things in pythia-160m
+
+292 capital letters in acronyms, also concentrated neg in 2 mlps
+
+291 formatting after eot
+
+286 ` the` in `in the`
+
+277 often the first `\n` in `\n\n`
+
+274 `-` in hyphenation and as formatting
+
+272 new lines in data dense looking situations/code
+
+270 sequences of spaces
+
+266 a bunch of ofs
+
+264 commas and `\n`s
+
+259 eot and then a single lower case letter, number, or formatting token
+
+251 capital words, mainly The, after eot in the middle of a context
+
+245 `be` in dm math function defs
+
+236 `the` in `on/for/from/in the`
+
+233 Woudn't have noticed this pattern otherwise, but this is a cluster with most common next tokens `to/in/on/from/for` like the preceeding tokens in 236 (except for to for some reason)
+
+230 capital words and formatting text just after eot
+
+229 mainly `the` in `in the`
+
+224 single digit numbers inside other numbers or fractions or indpendent
+
+223 Collect and Expand in dm math, those are related operations
+
+218 mainly `of` in `derivative of`
+
+210 to/from/in/with, those are similar tokens
+
+208 `of` in `<abstract property> of`\
+
+207, 204 `is` in `what/which is` in dm math
+
+203 eot tokens
+
+201 mainly the second `\n` in `\n\n`
+
+194 `\n` in code
+
+190 not all of these are induction patterns, but a whole bunch of them are. many are word parts of non-english/programming words/strange names.
+
+188 `the` in `into/about/undermine/etc the`, this is definitely a different & related distribution of predecessors to the
+
+185 open parens in mcq choices in dm math
+
+183 `the` in `of/to/in the`
+
+176 `the` in `of/to` the
+
+172 `of`s, very much of
+
+169 `the` in `in/of` the
+
+161 negative signs ` -` in front of relatively large numbers, mainly dm math
+
+159 mainly `the` in `to the`
+
+158 lots and lots of `\n`
+
+157 `\n` in pubmed
+
+150 `0` in dm math equations
+
+146 these `the`s do not get preceeded by `to/etc`, which I find relevant because I've been worried about whether `to/for/etc` are just comon words to preceed the, this cluster is characterized by `within/across/between/etc the`
+
+136 lots of double closing brackets with punctuation at the end
+
+132 `the` in `with/for/and the`
+
+131 `-` in pubmed citations
+
+123 `.` but with a large positive mlp 0 susc
+
+120 let in dm math, note mlp 1 is only neg susc
+
+288 lots of eot
+
+115 lots of `\n`
+
+112 `for/to/in the`
+
+111 this includes the `as well as` cluster
+
+99 lots of `well` in `as well as`, but also other stuff
+
+98 lowercase words with a space in front after eot
+
+97 `the` in `to/of/for the`
+
+85 small modifier(?) words eg `this, some, that, any, is`
+
+78 `\n` in dm mathematics, after the answer, typically a true/false answer
+
+71 `\n` after `Q:` in stachexchange
+
+65 close parens in dm math, but also other  datasets, I think this is general close parens around short things inside parens
+
+60 `the` in `to/of/in the` 
+
+58 `the` in `of/in the`
+
+54 `a` in `as/with/on a`
+
+45 lots of `as` in `such as`
+
+41 lots of `\n` after code-like text
+
+40 `the` in `on/to/from the`
+
+30 `\n` in github and stachexchange code
+
+27 `\n` without a space in front
+
+18 word parts in code
+
+15 Suppose, Let, and Calculate in dm math
+
+14 the first `\n` in `\n\n` without spaces in front
+
+11 commas appearing after a single word starting a sentence
+
+10 eot then capital token
+
+3 negative signs and 0
+
+1 `\n` in github and stachexchange
+
+# 31m
+359 mainly numbers in dates
+
+358 `in` in `collect the terms in`
+
+357 open parens in dm math mcq
+
+356 dm math Simplify
+
+351 a bunch of numbers to do with induction mainly in dm math
+
+350 word parts
+
+348 word parts
+
+346 `the` in `in/of/to/from the`
+
+345 `the` in `in the`
+
+342 new lines in code
+
+339 mainly two spaces `  ` 
+
+333 lots of `type` in pubmed references
+
+331 dm math `of` in `factor of` and `derivative of`
+
+328 eot capital letter or 1
+
+327 lots of `\n`s
+
+325 `-` in dates
+
+323 seems like a kind of numerical/formatting induction
+
+322 multiple levels of close parens and then punctuation
+
+318 `the` appearing immediately after a comma
+
+317 `is` in dm math `what is`
+
+316 seems a lot of formatting characters and function words
+
+312 `the` in `of/on/to` the?
+
+310 lots of words with \ and / before them
+
+308 `s` in possessive `'s` suffix
+
+307 `the` in `to/in/of/is/by` the
+
+304 negative numbers
+
+303 `\n` in dm math questions
+
+299 `the` in `in/of the`
+
+297 comas and `\n`s as well as a bunch of other effectively spacing tokens like periods and ;
+
+296 lots of `\n` at the end of `\n\n`
+
+295 `the` in `to/of the`
+
+294 mainly `OMNI` or `OMN`
+
+293 `\n` at the end of `\n\n`
+
+292 `is` in `what is`
+
+291 negative numbers, also lots of 0s
+
+288 close delimiters and then formatting
+
+284 the starting delimiter `="`
+
+283 this includes two main clusters, the `Is` in `is x prime/composite` in dm math, and `many` in `how many minutes` style qs in dm math
+
+282 lots of text immediately after or very close to eot, though this doesn't describe everything here
+
+281 lots of commas after dm math equations
+
+280 www in urls and `="`, these are two clusters in the umap
+
+
+277 there are several different umap clusters in this cluster, including `in` in biggest/smallest dm math questions, `\n` before answers in dm math, `\n` in code, and other stuff.
+
+275 `\n` typically after dm math answers
+
+273 `\n` then a sequence of `\t`s
+
+271 lots of single word then commas
+
+270 close parens and other right delimiters then typically a period.
+
+269 `the` in `of the`
+
+265 0s after a sequence of 0s typically
+
+263 `,`s after a sequence of capitalized words separated by `/`s in enron emails
+
+261 typically `the` in `in the`
+
+258 `a` in dm math mcq answers, strangely no other letters (except very few bs)
+
+255 word parts in latex, code, and enron headers(?)
+
+250 a bunch of `the`s after new lines
+
+246 `\n` at the end of `\n\n` in freelaw
+
+245 `\n` at the end of `\n\n` in pubmed
+
+244 mainly Let in dm math
+
+242 a big cluster of `\n`s after `Q:` in stackexchange
+
+239 the `://` in `https://`, also at the very tail, interesting how consistent that is
+
+238 looks like word parts you'd largely see in enron emails
+
+237 `be` in `let s be` type sentences in dm math
+
+236 mainly `a` in `is a`
+
+235 lots of `the`s appearing after a word associated with relative location, eg `within/throughout/into the`, though there are also other things going on here
+
+231 lots of possessive `'s`,  andthe word `own`, also lots of other stuff
+
+230 end squiggly bracket and paren, with paren possibly having a `.` afterward
+
+229 lots of `a` and `an`
+
+228 `,` typically in contexts involving quantities, measurements, or numbers
+
+227 `\n` after typically an eot token
+
+225 `,` mostly in regular text
+
+219 `\n` after a period without any spacing before it in relatively ordinary text
+
+217 a bunch of eot tags
+
+215 `Collect` and `Expand` in dm math, I've seen this cluster before in other models
+
+213 `the` in `in/of/to the`
+
+211 numbers seemingly more as identifiers than as actual numbers, eg in freelaw. though also a fair share of actual normal numbers in dm math
+
+209 the two space token `  ` mainly in enron
+
+208 ` -` mainly used in negative numbers, though this cluster is noisy
+
+203 ` -` in dm math negative numbered answers
+
+201 the second `\n` in `\n\n`
+
+200 dm math variable names!!
+
+199 small numbers of spaces, eg just one space, typically after a list of names in enron emails
+
+197 commas in lists of numbers
+
+194 mainly `the` in `of/to the`
+
+193 `\n`s in pubmed
+
+192 `\n`s in github/stackexchange/hn
+
+182 linebreaks, even split between `------` and `~~~`
+
+181 2016 mainly and some 2015, mainly in stackexchange, likely stackexchange timestamps
+
+178 `the` typically in `of the`
+
+177 `\n`s in enron emails
+
+176 `\n`s after `A:` in stackexchange
+
+175 multiple close parens with perhaps a question mark or punctuation afterwards, this also I think was present in a previous model
+
+174 `\n`s in pubmed abstracts
+
+173 instances of words, typically capital words very close to an eot
+
+172 commas between numbers, maybe typically 0(?)
+
+170 commas typically after `However` in the beginning of a sentence, but more commonly after a more general short construction in the beginning of a sentence
+
+169 `S` in `U.S.`
+
+168 commas in dm math, typically after a `in base m,` construction
+
+167 Capital ` The` and ` This`
+
+166 a whole bunch of `.`
+
+165 ` =` in dm math function definitions and suppositions
+
+164 `\n` mainly in enron emails
+
+163 `Let` and `Suppose` in dm math
+
+160 multiple choice `b` and `c` in dm math
+
+159 `\n` before a numerical answer in dm math
+
+158 single `\t` in github
+
+156 `\n` before/after names in enron emails
+
+153 negative signs before a dm math answer
+
+151 `the` typically in `in the`
+
+150 lots of small words like `by, can is, in, it, a`, not all labeled "function"
+
+148 lots of function words
+
+147 single `\t` in github
+
+143 lots of open parens in dm math function calls and defs, including `sqrt(`, also lots of ` =` in dm math too
+
+138 numbers at the end of a very long decimal
+
+137 `\n` after a linebreak, typically in hn
+
+135 capital words and letters just after an eot tag
+
+133 a bunch of `:` in stackexchange's `Q:`, but also some other stuff
+
+130 mainly question marks in dm math
+
+127 `\n` before `\n\n`
+
+123 mainly function words in particular `a` and `an`
+
+122 commas and new lines
+
+120 mainly ` =` in dm math function defs
+
+119 primarially ` and` immediately after a comma
+
+117 0s in dm math
+
+113 Let and true and false in dm math
+
+108 new lines in code
+
+106 mainly ` the` in `which/what is the` in dm math
+
+103 mainly `="` in github
+
+99 `the` in `to/of/in the`
+
+95 the word Category in wikipedia, also appears much in other models
+
+94 `the` in `and/of/for/in the`
+
+93 `(` in function definitions, including perhaps github/stackexchange but predominantly dm math
+
+92 `0`s in a bunch of contexts, often induction patterns, often preceeding a decimal point
+
+92 `\n`s in pubmed and arxiv
+
+89 `\n` after a line break mainly in hn
+
+85 a bunch of commas
+
+83 the second `\n` in `\n\n` in pile-cc and wikipedia
+
+81 `0`s after a sequence of 0s
+
+78, 76 `,`s in lists of numbers in dm math, also some `,`s in lists in github
+
+71 `.` as a decimal in dm math, and p-values
+
+70 semicolons `;` and colons `:` with colons appearing in "formatting" locations, eg after email lists or the Q/A in stackexchange
+
+68 `and` in technical sentences
+
+66 dm math variables
+
+60 lots of `\n`
+
+57 the typically after a single word then comma starting a sentence
+
+56 left parens in dm math mcqs
+
+48 ` =` in function definitions in dm math
+
+47 primarily `of/to/in the`
+
+45 mainly the token `························`, which appears a bunch in pubmed
+
+44 lots of `the` in `in the`
+
+37 `the` coming after abunch of not extremely short words
+
+36 `the` in `with/for/in the`
+
+30 `,`s in dates, `.`s in abbreviations, and `-` in hyphenations
+
+29 often `\n` before the ansewr in dm math
+
+24 the first `\n` in `\n\n` in hackernews
+
+23 `\n`s in technical subjects
+
+16 `the` in `of the`
+
+8 often the word nearest/between, and other number words
+
+7 `of` mainly in dm math
+
+5 a whole bunch of function words
+
+4 a whole bunch of `\n` at the end of `\n\n`
+
+3 wow! lots of induction in this one
+
+# 14m (incomplete)
+360 `0` after a sequence of `0`s
+
+357 largely the `@` in `ECT@ECT` in enron emails
+
+356 `in/by/at the`
+
+355 right `}`
+
+354 `\n` followed by several `\t`
+
+353 largely `,`s in dm math separating numbers or equations
+
+349 typically the second `\n` in `\n\n` across mainly pile-cc, hn, and wikipedia, so basically normal text
+
+246 lots of `between the` and `to the` here, (the token is the)
+
+339 this include sthe which `is` cluster
+
+338 lots of action words in particular `Collect` from dm math
+
+337 lots of of and for [the]
+
+336 of and in [the]
+
+335 reasonable number of and [the]
+
+333 lots of capitalized words
+
+332 in/of the
+
+330 `.` largely as a decimal, mostly in pubmed, no dm math interestingly
+
+328 commas after numbers and dates
+
+327 end parens in dm math mcq options
+
+326 negative signs in dm math answers
+
+322 mainly closing } but also other closing delimiters
+
+316 mainly word parts in github, pubmed, cc, wikipedia, and freelaw
+
+314 mainly `of the`
+
+311, 310 in/of the
+
+309 a bunch of small words like `in, as, at, is`
+
+308 lots of and thes, maybe these and thes are what I previously registered as just "a bunch of thes"
+
+305 `\n`s largely in hacker news
+
+303 lots of which/what is in dm math
+
+302 lots of noun is, which I point out because this is in contrast to eg "what is" as a question
+
+300 the posessive `'s` but also a bunch of seemingly unrelated stuff, seems like a confabulation, especially with the high cis on the mean susc plot
+
+298 lots of derivative ofs in dm math, also for some reason `s` as used as a variable in dm math
+
+290 the last `\n` in `\n\n`

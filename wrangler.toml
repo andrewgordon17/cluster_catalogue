@@ -1,0 +1,42 @@
+name = "cluster-catalogue-api"
+main = "workers/api.js"
+compatibility_date = "2024-01-01"
+
+# Workers configuration
+workers_dev = true
+
+# R2 bucket binding
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "cluster-catalogue"
+preview_bucket_name = "cluster-catalogue-preview"
+
+# Environment variables (non-secret)
+[vars]
+ENVIRONMENT = "production"
+
+# Secrets (set via: wrangler secret put SECRET_NAME)
+# PASSWORD_HASH - Bcrypt hash of the shared password
+# SESSION_SECRET - Random string for JWT signing
+# GOOGLE_SERVICE_ACCOUNT_KEY - JSON key for Google Docs API
+# GOOGLE_DOC_ID - ID of the Google Doc to update
+
+# Development configuration
+[env.development]
+name = "cluster-catalogue-api-dev"
+vars = { ENVIRONMENT = "development" }
+
+[[env.development.r2_buckets]]
+binding = "BUCKET"
+bucket_name = "cluster-catalogue-dev"
+
+# Production configuration
+[env.production]
+name = "cluster-catalogue-api-prod"
+vars = { ENVIRONMENT = "production" }
+# Uncomment and configure when you have a custom domain:
+# route = { pattern = "api.cluster-catalogue.example.com/*", zone_name = "example.com" }
+
+[[env.production.r2_buckets]]
+binding = "BUCKET"
+bucket_name = "cluster-catalogue"

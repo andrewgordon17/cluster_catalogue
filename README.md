@@ -1,4 +1,5 @@
-# Cluster Catalogue
+#OBSOLETE
+# Cluster Catalogue 
 
 A collaborative web application for exploring and cataloguing neural network cluster analysis data with interactive visualization and team-based observation recording.
 

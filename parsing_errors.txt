@@ -1,0 +1,87 @@
+PARSING ERRORS LOG
+================================================================================
+
+Line 75:
+  Section: 410m
+  Last valid line: 73
+  Error: Does not match observation format (should start with integer)
+  Content: a thing I have noticed here and in 1.4b is that there's a large number of `to`s and `for`s as well, often seen together
+--------------------------------------------------------------------------------
+
+Line 107:
+  Section: 410m
+  Last valid line: 105
+  Error: Does not match observation format (should start with integer)
+  Content: 248, 247 the in dm math
+--------------------------------------------------------------------------------
+
+Line 111:
+  Section: 410m
+  Last valid line: 109
+  Error: Does not match observation format (should start with integer)
+  Content: 228, periods in shortenings
+--------------------------------------------------------------------------------
+
+Line 164:
+  Section: 160m
+  Last valid line: 162
+  Error: Does not match observation format (should start with integer)
+  Content: `-` in structured strings (code, dates, etc)
+--------------------------------------------------------------------------------
+
+Line 168:
+  Section: 160m
+  Last valid line: 166
+  Error: Does not match observation format (should start with integer)
+  Content: using this notebook now instead of the cluster catalogue
+--------------------------------------------------------------------------------
+
+Line 180:
+  Section: 160m
+  Last valid line: 178
+  Error: Does not match observation format (should start with integer)
+  Content: 297, 296 new lines with commas
+--------------------------------------------------------------------------------
+
+Line 208:
+  Section: 160m
+  Last valid line: 206
+  Error: Does not match observation format (should start with integer)
+  Content: Note: I think it may be interesting to make a co-occurrence matrix for each token, eg how much do the token counts of each token in each cluster correlate with each other
+--------------------------------------------------------------------------------
+
+Line 230:
+  Section: 160m
+  Last valid line: 228
+  Error: Does not match observation format (should start with integer)
+  Content: `is` in what is
+--------------------------------------------------------------------------------
+
+Line 326:
+  Section: 160m
+  Last valid line: 324
+  Error: Does not match observation format (should start with integer)
+  Content: 79, 74 `**` in dm math
+--------------------------------------------------------------------------------
+
+Line 441:
+  Section: 70m
+  Last valid line: 439
+  Error: Does not match observation format (should start with integer)
+  Content: 207, 204 `is` in `what/which is` in dm math
+--------------------------------------------------------------------------------
+
+Line 809:
+  Section: 31m
+  Last valid line: 807
+  Error: Does not match observation format (should start with integer)
+  Content: 78, 76 `,`s in lists of numbers in dm math, also some `,`s in lists in github
+--------------------------------------------------------------------------------
+
+Line 902:
+  Section: 14m (incomplete)
+  Last valid line: 900
+  Error: Does not match observation format (should start with integer)
+  Content: 311, 310 in/of the
+--------------------------------------------------------------------------------
+

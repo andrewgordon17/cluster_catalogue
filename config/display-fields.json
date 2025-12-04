@@ -1,0 +1,79 @@
+{
+  "version": "1.0",
+  "fields": [
+    {
+      "key": "Size",
+      "type": "stat",
+      "label": "Size",
+      "format": "number",
+      "display_section": "statistics"
+    },
+    {
+      "key": "Number of Unique Next Tokens",
+      "type": "stat",
+      "label": "Unique Next Tokens",
+      "format": "number",
+      "display_section": "statistics"
+    },
+    {
+      "key": "Most Common Next Tokens",
+      "type": "list",
+      "label": "Most Common Next Tokens",
+      "display_section": "lists",
+      "limit": 10,
+      "format": "token_count"
+    },
+    {
+      "key": "Most Common Datasets",
+      "type": "list",
+      "label": "Most Common Datasets",
+      "display_section": "lists",
+      "limit": 10,
+      "format": "name_count"
+    },
+    {
+      "key": "Pattern Counts",
+      "type": "list",
+      "label": "Pattern Counts",
+      "display_section": "lists",
+      "format": "name_count"
+    },
+    {
+      "key": "Mean Susceptibilities",
+      "type": "chart",
+      "chart_type": "bar_with_error",
+      "label": "Mean Susceptibilities",
+      "display_section": "charts",
+      "config": {
+        "x_label": "Model Component",
+        "y_label": "Mean Susceptibility",
+        "title": "Mean Susceptibilities Across Components",
+        "error_bars": true,
+        "error_field": "Std Susceptibilities",
+        "label_generator": "model_components",
+        "color_scheme": "by_layer"
+      }
+    },
+    {
+      "key": "Mean Susceptibilities PCA",
+      "type": "chart",
+      "chart_type": "bar",
+      "label": "PCA Components",
+      "display_section": "charts",
+      "config": {
+        "x_label": "Principal Component",
+        "y_label": "Value",
+        "title": "PCA of Mean Susceptibilities",
+        "label_generator": "pca_components",
+        "color_scheme": "single"
+      }
+    },
+    {
+      "key": "Context Pairs",
+      "type": "context_list",
+      "label": "Context \u2192 Next Token Pairs",
+      "display_section": "contexts",
+      "limit": 20
+    }
+  ]
+}

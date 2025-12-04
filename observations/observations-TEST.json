@@ -1,0 +1,14 @@
+{
+  "0": {
+    "name": "0",
+    "observations": "Test entry",
+    "lastModified": "2025-10-20T11:31:01.248564Z",
+    "author": "script-import"
+  },
+  "1": {
+    "name": "1",
+    "observations": "Second test entry",
+    "lastModified": "2025-10-20T11:31:01.248568Z",
+    "author": "script-import"
+  }
+}
