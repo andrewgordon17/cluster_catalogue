@@ -8,6 +8,7 @@ class ConflictResolver {
     this.apiClient = apiClient;
     this.currentConflict = null;
     this.resolveCallback = null;
+    this.autoMerge = true; // Auto-merge conflicts by default (for offline work)
   }
 
   /**
@@ -140,13 +141,21 @@ class ConflictResolver {
       return await this.apiClient.saveObservation(model, clusterId, data);
     } catch (error) {
       if (error.name === 'ConflictError') {
-        // Show conflict modal and wait for user decision
         const remoteData = error.conflictData.current_data;
-        const resolvedData = await this.showConflictModal(data, remoteData);
+        let resolvedData;
 
-        if (!resolvedData) {
-          // User cancelled
-          throw new Error('Conflict resolution cancelled');
+        if (this.autoMerge) {
+          // Auto-merge conflicts without user interaction
+          resolvedData = this.mergeObservations(data, remoteData);
+          console.log('Auto-merged conflict:', { local: data, remote: remoteData, resolved: resolvedData });
+        } else {
+          // Show conflict modal and wait for user decision
+          resolvedData = await this.showConflictModal(data, remoteData);
+
+          if (!resolvedData) {
+            // User cancelled
+            throw new Error('Conflict resolution cancelled');
+          }
         }
 
         // Retry save with resolved data (without ETag to force overwrite)
