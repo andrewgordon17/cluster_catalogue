@@ -36,7 +36,7 @@ class Router {
     this.add('PUT', pattern, handler);
   }
 
-  async route(request, env) {
+  async route(request, env, ctx) {
     const url = new URL(request.url);
     const method = request.method;
 
@@ -46,7 +46,7 @@ class Router {
       const match = url.pathname.match(route.pattern);
       if (match) {
         const params = match.groups || {};
-        return await route.handler(request, env, params);
+        return await route.handler(request, env, ctx, params);
       }
     }
 
@@ -175,7 +175,7 @@ function hashCode(str) {
 
 // API Handlers
 
-async function handleAuth(request, env) {
+async function handleAuth(request, env, ctx, params) {
   if (request.method !== 'POST') {
     return jsonResponse({ error: 'Method not allowed' }, 405);
   }
@@ -209,7 +209,7 @@ async function handleAuth(request, env) {
   }
 }
 
-async function handleGetDatasets(request, env) {
+async function handleGetDatasets(request, env, ctx, params) {
   const authError = await requireAuth(request, env);
   if (authError) return authError;
 
@@ -237,7 +237,7 @@ async function handleGetDatasets(request, env) {
   }
 }
 
-async function handleGetDataset(request, env, params) {
+async function handleGetDataset(request, env, ctx, params) {
   const authError = await requireAuth(request, env);
   if (authError) return authError;
 
@@ -262,7 +262,7 @@ async function handleGetDataset(request, env, params) {
   }
 }
 
-async function handleGetConfig(request, env, params) {
+async function handleGetConfig(request, env, ctx, params) {
   const authError = await requireAuth(request, env);
   if (authError) return authError;
 
@@ -287,7 +287,7 @@ async function handleGetConfig(request, env, params) {
   }
 }
 
-async function handleGetAllObservations(request, env, params) {
+async function handleGetAllObservations(request, env, ctx, params) {
   const authError = await requireAuth(request, env);
   if (authError) return authError;
 
@@ -298,11 +298,21 @@ async function handleGetAllObservations(request, env, params) {
     const list = await env.BUCKET.list({ prefix });
     const observations = {};
 
-    for (const object of list.objects) {
-      const key = object.key;
-      const clusterFile = await env.BUCKET.get(key);
-      if (clusterFile) {
-        const data = await clusterFile.json();
+    // Fetch all observation files in parallel
+    const fetchPromises = list.objects.map(object =>
+      env.BUCKET.get(object.key)
+        .then(clusterFile => clusterFile ? clusterFile.json() : null)
+        .catch(err => {
+          console.error(`Failed to fetch ${object.key}:`, err.message);
+          return null;
+        })
+    );
+
+    const results = await Promise.all(fetchPromises);
+
+    // Build observations object
+    for (const data of results) {
+      if (data && data.cluster_id) {
         observations[data.cluster_id] = data;
       }
     }
@@ -317,7 +327,7 @@ async function handleGetAllObservations(request, env, params) {
   }
 }
 
-async function handleGetObservation(request, env, params) {
+async function handleGetObservation(request, env, ctx, params) {
   const authError = await requireAuth(request, env);
   if (authError) return authError;
 
@@ -354,7 +364,7 @@ async function handleGetObservation(request, env, params) {
   }
 }
 
-async function handlePutObservation(request, env, params) {
+async function handlePutObservation(request, env, ctx, params) {
   const authError = await requireAuth(request, env);
   if (authError) return authError;
 
@@ -415,11 +425,8 @@ async function handlePutObservation(request, env, params) {
 
     const newETag = generateETag(newData);
 
-    // Trigger Google Docs sync (fire and forget)
-    // In production, this should use a queue or Durable Object
-    if (env.GOOGLE_DOC_ID) {
-      env.waitUntil(syncToGoogleDocs(env, model));
-    }
+    // Google Docs sync removed from automatic save flow
+    // Use the manual sync endpoint (POST /api/google-docs/trigger) to update the doc
 
     return jsonResponse({
       success: true,
@@ -434,7 +441,7 @@ async function handlePutObservation(request, env, params) {
   }
 }
 
-async function handleGoogleDocsTrigger(request, env) {
+async function handleGoogleDocsTrigger(request, env, ctx, params) {
   const authError = await requireAuth(request, env);
   if (authError) return authError;
 
@@ -443,14 +450,12 @@ async function handleGoogleDocsTrigger(request, env) {
   }
 
   try {
-    const body = await request.json();
-    const { model } = body;
-
-    await syncToGoogleDocs(env, model);
+    // Sync all models (ignore model parameter if provided)
+    await syncToGoogleDocs(env);
 
     return jsonResponse({
       success: true,
-      message: 'Google Docs sync triggered'
+      message: 'Google Docs sync triggered for all models'
     });
   } catch (e) {
     return jsonResponse({ error: 'Failed to trigger sync', details: e.message }, 500);
@@ -468,7 +473,7 @@ function formatModelName(model) {
 
 // Main worker handler
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     // Handle CORS preflight
     if (request.method === 'OPTIONS') {
       return new Response(null, {
@@ -502,7 +507,7 @@ export default {
     router.post('^/api/google-docs/trigger$', handleGoogleDocsTrigger);
 
     try {
-      return await router.route(request, env);
+      return await router.route(request, env, ctx);
     } catch (e) {
       return jsonResponse({ error: 'Internal server error', details: e.message }, 500);
     }

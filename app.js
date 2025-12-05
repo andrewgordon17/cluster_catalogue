@@ -55,7 +55,7 @@ class ClusterCatalogue {
 
             // Initialize UI
             this.populateClusterSelect();
-            this.showCluster(this.clusterIds[0]);
+            await this.showCluster(this.clusterIds[0]);
 
             // Show main app
             document.getElementById('main-app').style.display = 'block';
@@ -156,17 +156,35 @@ class ClusterCatalogue {
     }
 
     /**
-     * Load observations for current dataset
+     * Initialize observations cache (no longer loads all at once)
      */
     async loadObservations() {
-        try {
-            const response = await this.apiClient.getObservations(this.currentDataset);
-            this.observations = response.observations || {};
+        // Just initialize empty cache - observations will be loaded on-demand
+        this.observations = {};
+        console.log(`✓ Initialized observations cache for ${this.currentDataset}`);
+    }
 
-            console.log(`✓ Loaded observations for ${this.currentDataset}`);
+    /**
+     * Load observation for a specific cluster (on-demand)
+     */
+    async loadObservationForCluster(clusterId) {
+        // Check if already cached
+        if (this.observations[clusterId]) {
+            return this.observations[clusterId];
+        }
+
+        try {
+            const observation = await this.apiClient.getObservation(this.currentDataset, clusterId);
+            this.observations[clusterId] = observation;
+            return observation;
         } catch (error) {
-            console.error('Failed to load observations:', error);
-            this.observations = {};
+            console.error(`Failed to load observation for cluster ${clusterId}:`, error);
+            // Return empty observation on error
+            return {
+                name: clusterId,
+                observations: '',
+                good: false
+            };
         }
     }
 
@@ -199,7 +217,7 @@ class ClusterCatalogue {
     /**
      * Show cluster data
      */
-    showCluster(clusterId) {
+    async showCluster(clusterId) {
         this.currentClusterId = clusterId;
         this.currentIndex = this.clusterIds.indexOf(clusterId);
 
@@ -215,6 +233,9 @@ class ClusterCatalogue {
 
         // Render all fields using field renderer
         this.fieldRenderer.renderAllFields(cluster, this.currentDataset);
+
+        // Load observation on-demand before updating form fields
+        await this.loadObservationForCluster(clusterId);
 
         // Update form fields (observations)
         this.updateFormFields();
@@ -284,19 +305,19 @@ class ClusterCatalogue {
     /**
      * Navigate to previous/next cluster
      */
-    navigateCluster(direction) {
+    async navigateCluster(direction) {
         const newIndex = this.currentIndex + direction;
         if (newIndex >= 0 && newIndex < this.clusterIds.length) {
-            this.showCluster(this.clusterIds[newIndex]);
+            await this.showCluster(this.clusterIds[newIndex]);
         }
     }
 
     /**
      * Handle cluster selection from dropdown
      */
-    selectCluster() {
+    async selectCluster() {
         const select = document.getElementById('cluster-select');
-        this.showCluster(select.value);
+        await this.showCluster(select.value);
     }
 
     /**
@@ -318,7 +339,7 @@ class ClusterCatalogue {
 
             // Update UI
             this.populateClusterSelect();
-            this.showCluster(this.clusterIds[0]);
+            await this.showCluster(this.clusterIds[0]);
 
             console.log(`✓ Switched to ${newDataset}`);
         } catch (error) {
