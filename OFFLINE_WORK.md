@@ -2,18 +2,25 @@
 
 ## On the Plane
 
-**1. Start local Worker:**
+**1. Start local Worker (Terminal 1):**
 ```bash
 wrangler dev
 ```
-Keep this running. It starts a local API with local R2 storage.
+Keep this running. It starts a local API with local R2 storage at `http://localhost:8787`.
 
-**2. Open the app:**
-Open `index.html` directly in your browser (File > Open, or double-click it).
+**2. Start local web server (Terminal 2):**
+```bash
+python3 -m http.server 8080
+```
+Keep this running too.
 
-The app auto-detects you're running locally and uses `http://localhost:8787/api`.
+**3. Open the app in browser:**
+```
+http://localhost:8080
+```
+The app auto-detects localhost and uses `http://localhost:8787/api`.
 
-**3. Work normally:**
+**4. Work normally:**
 - Browse clusters
 - Make observations
 - Click save
