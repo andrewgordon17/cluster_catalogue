@@ -84,7 +84,9 @@ class APIClient {
    * Get full dataset for a model
    */
   async getDataset(model) {
-    const response = await this.fetch(`/datasets/${model}`);
+    // Add cache-busting parameter to force reload of updated data
+    const cacheBust = Date.now();
+    const response = await this.fetch(`/datasets/${model}?_cb=${cacheBust}`);
     const etag = response.headers.get('ETag');
     if (etag) {
       this.etags[`dataset:${model}`] = etag;
@@ -96,7 +98,9 @@ class APIClient {
    * Get configuration file (display-fields or models)
    */
   async getConfig(type) {
-    const response = await this.fetch(`/config/${type}`);
+    // Add cache-busting parameter to force reload of updated config
+    const cacheBust = Date.now();
+    const response = await this.fetch(`/config/${type}?_cb=${cacheBust}`);
     const etag = response.headers.get('ETag');
     if (etag) {
       this.etags[`config:${type}`] = etag;
