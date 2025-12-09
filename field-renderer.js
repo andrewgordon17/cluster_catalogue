@@ -80,6 +80,8 @@ class FieldRenderer {
       let containerId = null;
       if (field.key === 'Most Common Next Tokens') {
         containerId = 'common-tokens';
+      } else if (field.key === 'Most Common Previous Tokens') {
+        containerId = 'common-previous-tokens';
       } else if (field.key === 'Most Common Datasets') {
         containerId = 'common-datasets';
       } else if (field.key === 'Pattern Counts') {
