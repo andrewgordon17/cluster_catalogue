@@ -25,6 +25,58 @@ class ClusterCatalogue {
 
         // Google Docs sync
         this.lastGoogleDocsSync = null;
+
+        // URL routing
+        this.isNavigatingFromPopState = false;
+    }
+
+    /**
+     * Parse URL hash parameters
+     */
+    getURLParams() {
+        const hash = window.location.hash.substring(1); // Remove #
+        const params = {};
+        if (hash) {
+            hash.split('&').forEach(param => {
+                const [key, value] = param.split('=');
+                if (key && value) {
+                    params[key] = decodeURIComponent(value);
+                }
+            });
+        }
+        return params;
+    }
+
+    /**
+     * Update URL hash with current state
+     */
+    updateURL(model, cluster) {
+        const hash = `#model=${encodeURIComponent(model)}&cluster=${encodeURIComponent(cluster)}`;
+        if (window.location.hash !== hash) {
+            window.history.pushState(null, '', hash);
+        }
+    }
+
+    /**
+     * Handle browser back/forward buttons
+     */
+    async handlePopState() {
+        this.isNavigatingFromPopState = true;
+        const params = this.getURLParams();
+
+        // Switch model if needed
+        if (params.model && params.model !== this.currentDataset) {
+            const select = document.getElementById('dataset-select');
+            select.value = params.model;
+            await this.switchDataset();
+        }
+
+        // Switch cluster if specified
+        if (params.cluster && this.clusterIds.includes(params.cluster)) {
+            await this.showCluster(params.cluster);
+        }
+
+        this.isNavigatingFromPopState = false;
     }
 
     async init() {
@@ -48,14 +100,35 @@ class ClusterCatalogue {
             // Initialize field renderer
             this.fieldRenderer = new FieldRenderer(this.displayFieldsConfig, this.modelConfig);
 
+            // Check URL parameters for initial state
+            const urlParams = this.getURLParams();
+            const initialModel = urlParams.model || 'pythia-14m';
+            const initialCluster = urlParams.cluster || null;
+
             // Load initial data
             await this.populateDatasetSelect();
+
+            // If URL specifies a model, switch to it
+            if (urlParams.model && urlParams.model !== this.currentDataset) {
+                const select = document.getElementById('dataset-select');
+                select.value = initialModel;
+                this.currentDataset = initialModel;
+            }
+
             await this.loadClustersData();
             await this.loadObservations();
 
             // Initialize UI
             this.populateClusterSelect();
-            await this.showCluster(this.clusterIds[0]);
+
+            // Show initial cluster (from URL or default)
+            const clusterToShow = initialCluster && this.clusterIds.includes(initialCluster)
+                ? initialCluster
+                : this.clusterIds[0];
+            await this.showCluster(clusterToShow);
+
+            // Set up browser back/forward button handling
+            window.addEventListener('popstate', () => this.handlePopState());
 
             // Show main app
             document.getElementById('main-app').style.display = 'block';
@@ -239,6 +312,11 @@ class ClusterCatalogue {
 
         // Update form fields (observations)
         this.updateFormFields();
+
+        // Update URL (unless we're navigating from popstate to avoid double history entries)
+        if (!this.isNavigatingFromPopState) {
+            this.updateURL(this.currentDataset, clusterId);
+        }
 
         console.log(`✓ Showing cluster ${clusterId}`);
     }
