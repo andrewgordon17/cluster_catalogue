@@ -474,6 +474,12 @@
                         <small>Good clusters are highlighted in reports and Google Docs</small>
                     </div>
 
+                    <div class="good-toggle-group">
+                        <input type="checkbox" id="human-verified-toggle" onchange="saveData()">
+                        <label for="human-verified-toggle">Human Verified (Press 'h')</label>
+                        <small>Mark cluster as human reviewed</small>
+                    </div>
+
                     <div class="form-group">
                         <label for="observations">Observations</label>
                         <textarea id="observations" placeholder="Record your observations about this cluster..." onchange="saveData()"></textarea>

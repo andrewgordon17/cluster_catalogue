@@ -10,9 +10,12 @@
  * - GET /api/observations/{model}/{cluster_id} - Get single observation
  * - PUT /api/observations/{model}/{cluster_id} - Update observation
  * - POST /api/google-docs/trigger - Trigger Google Docs sync
+ * - GET /api/export/text - Export all observations as text
+ * - GET /api/export/text/{model} - Export observations for a single model as text
+ * - GET /api/export/json - Export all observations as simple JSON (model -> cluster -> observation)
  */
 
-import { syncToGoogleDocs } from './google-docs-sync';
+import { syncToGoogleDocs, getAllModelNames, loadAllObservations, buildDocumentContent } from './google-docs-sync';
 
 // Router class for handling requests
 class Router {
@@ -373,7 +376,7 @@ async function handlePutObservation(request, env, ctx, params) {
 
   try {
     const body = await request.json();
-    const { name, observations, good } = body;
+    const { name, observations, good, humanVerified } = body;
 
     // Check If-Match header for optimistic locking
     const ifMatch = request.headers.get('If-Match');
@@ -402,12 +405,17 @@ async function handlePutObservation(request, env, ctx, params) {
 
     // Create updated observation
     const now = new Date().toISOString();
+
+    // Determine default humanVerified based on model name
+    const defaultHumanVerified = model.includes('NOPC1');
+
     const newData = {
       cluster_id,
       model,
       name: name || cluster_id,
       observations: observations || '',
       good: good !== undefined ? good : false,
+      humanVerified: humanVerified !== undefined ? humanVerified : defaultHumanVerified,
       metadata: {
         created: currentData?.metadata?.created || now,
         last_modified: now,
@@ -462,6 +470,108 @@ async function handleGoogleDocsTrigger(request, env, ctx, params) {
   }
 }
 
+async function handleExportTextAll(request, env, ctx, params) {
+  const authError = await requireAuth(request, env);
+  if (authError) return authError;
+
+  try {
+    // Load observations for all models
+    const models = await getAllModelNames(env);
+    const allObservations = await loadAllObservations(env, models);
+
+    // Use GitHub Pages URL for the frontend
+    const baseUrl = env.APP_BASE_URL || 'https://andrewgordon17.github.io/cluster_catalogue/';
+
+    // Build text content with hyperlinks
+    const textContent = buildDocumentContent(allObservations, baseUrl);
+
+    // Return as plain text
+    return new Response(textContent, {
+      status: 200,
+      headers: {
+        'Content-Type': 'text/plain; charset=utf-8',
+        'Access-Control-Allow-Origin': '*',
+        'Content-Disposition': 'attachment; filename="cluster-catalogue-all.txt"'
+      }
+    });
+  } catch (e) {
+    console.error('handleExportTextAll error:', e.message, e.stack);
+    return jsonResponse({ error: 'Failed to export text', details: e.message }, 500);
+  }
+}
+
+async function handleExportTextModel(request, env, ctx, params) {
+  const authError = await requireAuth(request, env);
+  if (authError) return authError;
+
+  const { model } = params;
+
+  try {
+    // Load observations for single model
+    const allObservations = await loadAllObservations(env, [model]);
+
+    // Check if model has any observations
+    if (!allObservations[model] || Object.keys(allObservations[model]).length === 0) {
+      return new Response(`No observations found for model: ${model}`, {
+        status: 404,
+        headers: {
+          'Content-Type': 'text/plain; charset=utf-8',
+          'Access-Control-Allow-Origin': '*'
+        }
+      });
+    }
+
+    // Use GitHub Pages URL for the frontend
+    const baseUrl = env.APP_BASE_URL || 'https://andrewgordon17.github.io/cluster_catalogue/';
+
+    // Build text content with hyperlinks
+    const textContent = buildDocumentContent(allObservations, baseUrl);
+
+    // Return as plain text
+    return new Response(textContent, {
+      status: 200,
+      headers: {
+        'Content-Type': 'text/plain; charset=utf-8',
+        'Access-Control-Allow-Origin': '*',
+        'Content-Disposition': `attachment; filename="cluster-catalogue-${model}.txt"`
+      }
+    });
+  } catch (e) {
+    console.error('handleExportTextModel error:', e.message, e.stack);
+    return jsonResponse({ error: 'Failed to export text', details: e.message }, 500);
+  }
+}
+
+async function handleExportJson(request, env, ctx, params) {
+  const authError = await requireAuth(request, env);
+  if (authError) return authError;
+
+  try {
+    // Load observations for all models
+    const models = await getAllModelNames(env);
+    const allObservations = await loadAllObservations(env, models);
+
+    // Transform to simple format: { model: { cluster_id: observation_text } }
+    const result = {};
+
+    for (const model of Object.keys(allObservations).sort()) {
+      result[model] = {};
+
+      for (const clusterId of Object.keys(allObservations[model]).sort((a, b) => parseInt(a) - parseInt(b))) {
+        const obs = allObservations[model][clusterId];
+        result[model][clusterId] = obs.observations || '';
+      }
+    }
+
+    return jsonResponse(result, 200, {
+      'Content-Disposition': 'attachment; filename="cluster-observations.json"'
+    });
+  } catch (e) {
+    console.error('handleExportJson error:', e.message, e.stack);
+    return jsonResponse({ error: 'Failed to export JSON', details: e.message }, 500);
+  }
+}
+
 function formatModelName(model) {
   const parts = model.split('-');
   if (parts.length === 2) {
@@ -505,6 +615,13 @@ export default {
 
     // Google Docs endpoints
     router.post('^/api/google-docs/trigger$', handleGoogleDocsTrigger);
+
+    // Text export endpoints
+    router.get('^/api/export/text/(?<model>[^/]+)$', handleExportTextModel);
+    router.get('^/api/export/text$', handleExportTextAll);
+
+    // JSON export endpoint
+    router.get('^/api/export/json$', handleExportJson);
 
     try {
       return await router.route(request, env, ctx);

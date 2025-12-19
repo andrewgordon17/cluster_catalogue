@@ -79,6 +79,97 @@ class ClusterCatalogue {
         this.isNavigatingFromPopState = false;
     }
 
+    /**
+     * Set up keyboard shortcuts
+     */
+    setupKeyboardShortcuts() {
+        document.addEventListener('keydown', async (e) => {
+            // Ignore if user is typing in an input/textarea
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+                return;
+            }
+
+            switch(e.key) {
+                case 'h':
+                    // Mark as human verified
+                    e.preventDefault();
+                    document.getElementById('human-verified-toggle').checked = true;
+                    await this.saveData();
+                    break;
+
+                case 'ArrowLeft':
+                    // Navigate to previous cluster
+                    e.preventDefault();
+                    this.navigateCluster(-1);
+                    break;
+
+                case 'ArrowRight':
+                    // Navigate to next cluster
+                    e.preventDefault();
+                    this.navigateCluster(1);
+                    break;
+
+                case 'j':
+                    // Jump to next unverified cluster
+                    e.preventDefault();
+                    await this.jumpToNextUnverified();
+                    break;
+            }
+        });
+    }
+
+    /**
+     * Jump to the next cluster that is not human verified
+     */
+    async jumpToNextUnverified() {
+        const startIndex = this.currentIndex;
+        let foundIndex = -1;
+
+        // Search forward from current position
+        for (let i = startIndex + 1; i < this.clusterIds.length; i++) {
+            const clusterId = this.clusterIds[i];
+            const observation = this.observations[clusterId] || {};
+
+            // Check if not verified (considering default based on model name)
+            const defaultHumanVerified = this.currentDataset.includes('NOPC1');
+            const isVerified = observation.humanVerified !== undefined
+                ? observation.humanVerified
+                : defaultHumanVerified;
+
+            if (!isVerified) {
+                foundIndex = i;
+                break;
+            }
+        }
+
+        // If not found forward, search from beginning
+        if (foundIndex === -1) {
+            for (let i = 0; i < startIndex; i++) {
+                const clusterId = this.clusterIds[i];
+                const observation = this.observations[clusterId] || {};
+
+                const defaultHumanVerified = this.currentDataset.includes('NOPC1');
+                const isVerified = observation.humanVerified !== undefined
+                    ? observation.humanVerified
+                    : defaultHumanVerified;
+
+                if (!isVerified) {
+                    foundIndex = i;
+                    break;
+                }
+            }
+        }
+
+        // Navigate to found cluster or show message
+        if (foundIndex !== -1) {
+            this.currentIndex = foundIndex;
+            await this.showCluster(this.clusterIds[foundIndex]);
+        } else {
+            this.setSaveStatus('All clusters verified ✓');
+            setTimeout(() => this.setSaveStatus('Ready'), 2000);
+        }
+    }
+
     async init() {
         try {
             // Initialize API client
@@ -129,6 +220,9 @@ class ClusterCatalogue {
 
             // Set up browser back/forward button handling
             window.addEventListener('popstate', () => this.handlePopState());
+
+            // Set up keyboard shortcuts
+            this.setupKeyboardShortcuts();
 
             // Show main app
             document.getElementById('main-app').style.display = 'block';
@@ -330,6 +424,11 @@ class ClusterCatalogue {
         document.getElementById('cluster-name').value = saved.name || this.currentClusterId;
         document.getElementById('observations').value = saved.observations || '';
         document.getElementById('good-toggle').checked = saved.good || false;
+
+        // Set human verified with default based on model name
+        const defaultHumanVerified = this.currentDataset.includes('NOPC1');
+        document.getElementById('human-verified-toggle').checked =
+            saved.humanVerified !== undefined ? saved.humanVerified : defaultHumanVerified;
     }
 
     /**
@@ -339,8 +438,9 @@ class ClusterCatalogue {
         const name = document.getElementById('cluster-name').value.trim();
         const observations = document.getElementById('observations').value.trim();
         const good = document.getElementById('good-toggle').checked;
+        const humanVerified = document.getElementById('human-verified-toggle').checked;
 
-        const data = { name, observations, good };
+        const data = { name, observations, good, humanVerified };
 
         // Update local cache
         this.observations[this.currentClusterId] = data;
