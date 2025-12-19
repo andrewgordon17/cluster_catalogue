@@ -407,7 +407,7 @@ async function handlePutObservation(request, env, ctx, params) {
     const now = new Date().toISOString();
 
     // Determine default humanVerified based on model name
-    const defaultHumanVerified = model.includes('NOPC1');
+    const defaultHumanVerified = !model.includes('NOPC1');
 
     const newData = {
       cluster_id,

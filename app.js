@@ -131,7 +131,7 @@ class ClusterCatalogue {
             const observation = this.observations[clusterId] || {};
 
             // Check if not verified (considering default based on model name)
-            const defaultHumanVerified = this.currentDataset.includes('NOPC1');
+            const defaultHumanVerified = !this.currentDataset.includes('NOPC1');
             const isVerified = observation.humanVerified !== undefined
                 ? observation.humanVerified
                 : defaultHumanVerified;
@@ -148,7 +148,7 @@ class ClusterCatalogue {
                 const clusterId = this.clusterIds[i];
                 const observation = this.observations[clusterId] || {};
 
-                const defaultHumanVerified = this.currentDataset.includes('NOPC1');
+                const defaultHumanVerified = !this.currentDataset.includes('NOPC1');
                 const isVerified = observation.humanVerified !== undefined
                     ? observation.humanVerified
                     : defaultHumanVerified;
@@ -426,7 +426,7 @@ class ClusterCatalogue {
         document.getElementById('good-toggle').checked = saved.good || false;
 
         // Set human verified with default based on model name
-        const defaultHumanVerified = this.currentDataset.includes('NOPC1');
+        const defaultHumanVerified = !this.currentDataset.includes('NOPC1');
         document.getElementById('human-verified-toggle').checked =
             saved.humanVerified !== undefined ? saved.humanVerified : defaultHumanVerified;
     }
